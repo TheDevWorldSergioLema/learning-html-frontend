@@ -30,6 +30,17 @@ npm run preview    # serves dist/ on http://localhost:4173
 
 `dist/` is a static site: it can be served by any web server, no runtime configuration needed.
 
+## Deployment
+
+Every push to `main` runs `.github/workflows/deploy.yml`: lint, tests and build, then `dist/` is published to
+GitHub Pages at https://learning-html.sergiolema.dev.
+
+One-time setup:
+
+- DNS: a `CNAME` record `learning-html` → `thedevworldsergiolema.github.io.`
+- GitHub, repo **Settings → Pages**: source **GitHub Actions**, custom domain `learning-html.sergiolema.dev`,
+  then **Enforce HTTPS** once the certificate is issued
+
 ## Stack
 
 - React 19, built with Vite
