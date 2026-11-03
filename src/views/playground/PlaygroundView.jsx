@@ -1,8 +1,10 @@
 import { useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useCodeComments } from '../../hooks/useCodeComments.js'
 import { PublicLayout } from '../../layout/PublicLayout.jsx'
 import { useProgressStore } from '../../stores/progressStore.js'
 import { EditorTab } from '../../types/editorTab.js'
+import { fillComments } from '../../utils/codeComments.js'
 import { compareBuild } from '../../utils/compare.js'
 import { lintCss } from '../../utils/cssLint.js'
 import { BuildCheck } from './check/BuildCheck.jsx'
@@ -14,11 +16,15 @@ import { LegoFrame } from './preview/LegoFrame.jsx'
 import { StepStrip } from './steps/StepStrip.jsx'
 import './PlaygroundView.scss'
 
-const starterCode = (level) => ({ html: level.html, css: level.css })
-const solutionCode = (level) => ({ html: level.solutionHtml ?? level.html, css: level.solutionCss ?? level.css })
+const starterCode = (level, comments) => ({ html: level.html, css: fillComments(level.css, comments) })
+const solutionCode = (level, comments) => ({
+  html: level.solutionHtml ?? level.html,
+  css: fillComments(level.solutionCss ?? level.css, comments),
+})
 
 export function PlaygroundView() {
   const { t } = useTranslation()
+  const comments = useCodeComments()
   const progress = useProgressStore()
   const [target, setTarget] = useState(null)
   const [actual, setActual] = useState(null)
@@ -28,7 +34,8 @@ export function PlaygroundView() {
 
   const index = Math.min(progress.current, levels.length - 1)
   const level = levels[index]
-  const code = progress.code[level.id] ?? starterCode(level)
+  const starter = starterCode(level, comments)
+  const code = progress.code[level.id] ?? starter
   const tab = tabChoice?.id === level.id ? tabChoice.tab : (level.startTab ?? EditorTab.Css)
   const hintsShown = progress.hints[level.id] ?? 0
   const current = target?.id === level.id && actual?.id === level.id
@@ -37,7 +44,7 @@ export function PlaygroundView() {
   const isLast = index === levels.length - 1
   const step = index + 1
 
-  const solution = useMemo(() => solutionCode(level), [level])
+  const solution = useMemo(() => solutionCode(level, comments), [level, comments])
   const warnings = useMemo(() => lintCss(code.css), [code.css])
 
   const markIfDone = () => {
@@ -75,7 +82,7 @@ export function PlaygroundView() {
         html={code.html}
         css={code.css}
         htmlEditable={Boolean(level.htmlEditable)}
-        onChange={(which, value) => progress.editCode(level.id, starterCode(level), which, value)}
+        onChange={(which, value) => progress.editCode(level.id, starter, which, value)}
         onReset={() => progress.resetCode(level.id)}
       />
     </div>

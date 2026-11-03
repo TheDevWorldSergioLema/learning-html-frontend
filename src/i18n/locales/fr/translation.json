@@ -1,0 +1,392 @@
+{
+  "app": {
+    "name": "Brique par brique"
+  },
+  "language": {
+    "label": "Langue",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "bothSides": "10 + 10 = 20px de large et de haut",
+    "longSize": "20px de haut, 60px de large",
+    "standingSize": "60px de haut, 20px de large",
+    "largeOnly": "seulement la grande brique",
+    "square": "2 × 2 tenons, vert",
+    "long": "6 tenons de large, 2 tenons de haut, orange",
+    "post": "1 tenon de large, 5 tenons de haut, violet",
+    "downRight": "40px vers le bas, 20px vers la droite",
+    "alreadySet": "Déjà défini",
+    "atBottom": "briques en bas",
+    "verticalNow": "vertical maintenant !",
+    "houseBaseplate": "Empile le toit et la rangée, centrés sur la plaque",
+    "houseRow": "Murs et porte côte à côte, à 1 tenon d'écart, posés en bas",
+    "roof": "8 tenons de large, 2 tenons de haut, rouge",
+    "wall": "2 tenons de large, 4 tenons de haut, blanc",
+    "door": "2 tenons de large, 3 tenons de haut, bleu"
+  },
+  "steps": {
+    "label": "Étapes",
+    "step": "Étape {{number}} : {{title}}",
+    "stepDone": "Étape {{number}} : {{title}}, terminée",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Étape {{step}} sur {{total}}",
+    "goal": "Ton objectif : ",
+    "firstHint": "Besoin d'un indice ?",
+    "nextHint": "Un autre indice",
+    "hintCount": "{{current}} sur {{total}}",
+    "showSolution": "Montre-moi la solution",
+    "confirmLabel": "Remplacer ton code par la solution ?",
+    "confirmText": "Ton code sera remplacé par la solution.",
+    "replaceCode": "Remplacer mon code",
+    "keepTrying": "Je continue"
+  },
+  "editor": {
+    "label": "Éditeur de code",
+    "files": "Fichier",
+    "tabs": {
+      "html": "index.html",
+      "css": "style.css"
+    },
+    "code": {
+      "html": "Code HTML",
+      "css": "Code CSS"
+    },
+    "startOver": "Recommencer",
+    "htmlEditable": "Ce HTML va à l'intérieur de `<div class=\"baseplate\">`.",
+    "htmlFixed": "Le HTML est fixe dans cette étape : change l'apparence dans <strong>style.css</strong>."
+  },
+  "preview": {
+    "label": "Aperçu",
+    "address": "bricks://step-{{step}}/index.html",
+    "showTarget": "Afficher le modèle",
+    "yourBuild": "Ta construction",
+    "targetBuild": "Construction modèle"
+  },
+  "check": {
+    "title": "Vérification",
+    "count_one": "{{placed}} brique sur {{count}} en place",
+    "count_other": "{{placed}} briques sur {{count}} en place",
+    "inPlace": "en place",
+    "unnamedBrick": "brique {{number}}",
+    "solved": "Étape réussie !",
+    "finished": "Tu as terminé toutes les étapes !",
+    "nextStep": "Étape suivante",
+    "issues": {
+      "tooWide": "{{distance}} de trop en largeur",
+      "tooNarrow": "{{distance}} de moins en largeur",
+      "tooTall": "{{distance}} de trop en hauteur",
+      "tooShort": "{{distance}} de moins en hauteur",
+      "tooFarRight": "{{distance}} trop à droite",
+      "tooFarLeft": "{{distance}} trop à gauche",
+      "tooLow": "{{distance}} trop bas",
+      "tooHigh": "{{distance}} trop haut",
+      "wrongColor": "devrait être {{color}}",
+      "stayUnpainted": "devrait rester sans couleur",
+      "missing": "manque : ajoute-la dans le HTML",
+      "extra": "ne fait pas partie de cette construction : supprime-la"
+    },
+    "distance": {
+      "stud_one": "{{count}} tenon",
+      "stud_other": "{{count}} tenons",
+      "px": "{{count}}px"
+    },
+    "colors": {
+      "red": "rouge",
+      "yellow": "jaune",
+      "blue": "bleue",
+      "green": "verte",
+      "orange": "orange",
+      "purple": "violette",
+      "white": "blanche",
+      "black": "noire"
+    },
+    "warnings": {
+      "unmatchedClosingBrace": "Ligne {{line}} : il y a une } sans { correspondante.",
+      "missingSemicolon": "Ligne {{line}} : il manque peut-être un ; à la fin de la ligne.",
+      "missingColon": "Ligne {{line}} : écris un : entre la propriété et sa valeur.",
+      "missingUnit": "Ligne {{line}} : ajoute une unité au nombre, comme 20px.",
+      "unclosedBrace": "Une { n'est jamais fermée : ajoute une } à la fin de la règle."
+    }
+  },
+  "levels": {
+    "first-brick": {
+      "title": "Ta première brique",
+      "intro": [
+        "Chaque brique est une `<div>` vide. Sans rien dedans, elle n'a aucune taille. `padding` ajoute de l'espace à l'intérieur de la brique, et c'est cet espace que tu vois.",
+        "`padding: 10px` ajoute 10px de chaque côté, donc la brique fait 20px × 20px : exactement un tenon."
+      ],
+      "goal": "Fais une brique de 2 tenons de large et 2 tenons de haut (40px × 40px).",
+      "hints": [
+        "Le padding s'ajoute des deux côtés : gauche + droite donne la largeur, haut + bas donne la hauteur.",
+        "Il te faut 40px au total, donc chaque côté en prend la moitié.",
+        "Change la valeur en `padding: 20px;`"
+      ],
+      "recap": "`padding` fait grandir une brique de l'intérieur. La moitié de la taille voulue va de chaque côté."
+    },
+    "long-brick": {
+      "title": "Une brique longue",
+      "intro": [
+        "`padding` accepte deux valeurs : la première pour le haut et le bas, la seconde pour la gauche et la droite.",
+        "C'est comme ça qu'on obtient des briques longues au lieu de carrés."
+      ],
+      "goal": "Fais une brique de 4 tenons de large et 2 tenons de haut (80px × 40px).",
+      "hints": [
+        "La hauteur reste à 40px, donc le haut et le bas restent à 20px chacun.",
+        "La largeur doit faire 80px : 40px à gauche et 40px à droite.",
+        "Écris `padding: 20px 40px;`"
+      ],
+      "recap": "Avec deux valeurs, `padding: vertical horizontal;` te permet de donner sa forme à la brique."
+    },
+    "standing-brick": {
+      "title": "Retourne-la",
+      "intro": [
+        "Inverse les deux valeurs et la brique se retourne : une grande première valeur la rend haute, une grande seconde valeur la rend large."
+      ],
+      "goal": "Fais une brique de 1 tenon de large et 4 tenons de haut (20px × 80px).",
+      "hints": [
+        "Haute veut dire une grande première valeur (haut et bas).",
+        "Hauteur 80px → 40px en haut et en bas. Largeur 20px → 10px à gauche et à droite.",
+        "Écris `padding: 40px 10px;`"
+      ],
+      "recap": "La première valeur règle la hauteur, la seconde la largeur."
+    },
+    "two-sizes": {
+      "title": "Deux briques, deux tailles",
+      "intro": [
+        "Une brique peut avoir plusieurs classes. `class=\"brick small\"` veut dire que la brique reçoit les règles de `.brick` et celles de `.small`.",
+        "Les règles de `.brick` s'appliquent à toutes les briques. Celles de `.small` ou `.large` ne s'appliquent qu'à cette brique, et elles l'emportent sur `.brick` car elles viennent plus loin dans le fichier."
+      ],
+      "goal": "Fais une petite brique de 2 × 2 tenons et une grande brique de 6 tenons de large et 4 tenons de haut.",
+      "hints": [
+        "Écris le padding dans `.small { }` et `.large { }`, pas dans `.brick`.",
+        "Petite : 40px × 40px. Grande : 120px de large, 80px de haut.",
+        "`.small { padding: 20px; }` et `.large { padding: 40px 60px; }`"
+      ],
+      "recap": "Les règles communes vont dans `.brick` ; chaque classe en plus ajoute ce qui est propre à une brique."
+    },
+    "paint-it": {
+      "title": "Peins-la en rouge",
+      "intro": [
+        "Au départ, les briques ne sont pas peintes. `background-color` peint l'intérieur de la brique, padding compris.",
+        "CSS connaît des noms de couleurs comme `red`, `yellow`, `blue`, `green`, `orange`, `purple`, `white` et `black`."
+      ],
+      "goal": "Peins la brique longue en rouge.",
+      "hints": [
+        "Ajoute une nouvelle ligne dans `.brick { }`. Chaque ligne s'écrit `property: value;`",
+        "Écris `background-color: red;` sous le padding."
+      ],
+      "recap": "`background-color` peint la brique. N'oublie pas le `;` à la fin de chaque ligne."
+    },
+    "three-colors": {
+      "title": "Trois couleurs",
+      "intro": [
+        "Les trois briques partagent les règles de `.brick`, elles ont donc la même taille. Leur seconde classe permet de peindre chacune différemment."
+      ],
+      "goal": "Peins les briques en rouge, jaune et bleu, de gauche à droite.",
+      "hints": [
+        "`.one` est déjà prête. Copie sa ligne dans `.two` et `.three`.",
+        "Change le nom de la couleur : `yellow` pour `.two`, `blue` pour `.three`."
+      ],
+      "recap": "Une classe pour ce que les briques partagent, une classe pour ce qui rend chaque brique différente."
+    },
+    "brick-sorter": {
+      "title": "Le tri des briques",
+      "intro": [
+        "Maintenant, taille et couleur ensemble. Chaque brique a besoin de son propre `padding` et de sa propre `background-color`.",
+        "Regarde les contours en pointillés dans l'aperçu : ils montrent où chaque brique doit arriver et de quelle couleur elle doit être."
+      ],
+      "goal": "Un carré vert de 2 × 2, une brique orange de 6 tenons de large et 2 de haut, et un poteau violet de 1 tenon de large et 5 de haut.",
+      "hints": [
+        "Chaque tenon fait 20px. Divise la taille voulue par 2 pour obtenir le padding d'un côté.",
+        "Carré : `padding: 20px;` Longue : `padding: 20px 60px;` Poteau : `padding: 50px 10px;`",
+        "Puis ajoute `background-color: green;`, `orange` et `purple`."
+      ],
+      "recap": "La taille avec `padding`, la couleur avec `background-color` : tu sais maintenant faire n'importe quelle brique."
+    },
+    "move-right": {
+      "title": "Vers la droite",
+      "intro": [
+        "`padding` est l'espace à l'intérieur de la brique. `margin` est l'espace à l'extérieur : il éloigne la brique de ce qui l'entoure.",
+        "`margin-left: 40px` laisse 40px vides à gauche de la brique, qui se décale donc de 2 tenons vers la droite."
+      ],
+      "goal": "Déplace la brique rouge de 6 tenons vers la droite.",
+      "hints": [
+        "Il te faut de l'espace vide à gauche de la brique : `margin-left`.",
+        "6 tenons × 20px = 120px.",
+        "Ajoute `margin-left: 120px;`"
+      ],
+      "recap": "`margin` est un espace invisible autour d'une brique. Il la déplace sans changer sa taille."
+    },
+    "move-down": {
+      "title": "En bas et à travers",
+      "intro": [
+        "`margin-top` pousse une brique vers le bas. Combine-le avec `margin-left` pour placer une brique n'importe où sur la plaque.",
+        "Il existe aussi une forme courte à quatre valeurs, dans le sens des aiguilles d'une montre en partant du haut : `margin: top right bottom left;`"
+      ],
+      "goal": "Place la brique à 10 tenons du bord gauche et 4 tenons du haut.",
+      "hints": [
+        "Deux marges : une depuis la gauche, une depuis le haut.",
+        "10 tenons = 200px depuis la gauche, 4 tenons = 80px depuis le haut.",
+        "`margin-left: 200px;` et `margin-top: 80px;` (ou `margin: 80px 0 0 200px;`)"
+      ],
+      "recap": "`margin-top` et `margin-left` placent une brique à un endroit précis."
+    },
+    "staircase": {
+      "title": "L'escalier",
+      "intro": [
+        "Les marges d'une brique poussent aussi ses voisines. `margin-right` sur chaque brique laisse un espace après chacune.",
+        "Donne à chaque marche son propre `margin-top` pour la placer plus bas que la précédente."
+      ],
+      "goal": "Construis un escalier : un tenon entre les marches, chaque marche 2 tenons plus bas que la précédente.",
+      "hints": [
+        "L'espace entre les marches est le même pour toutes : mets `margin-right: 20px;` dans `.brick`.",
+        "La première marche reste en haut. La deuxième descend de 2 tenons, la troisième de 4 tenons.",
+        "`.two { margin-top: 40px; }` et `.three { margin-top: 80px; }`"
+      ],
+      "recap": "Une marge pousse aussi les voisines. L'espacement commun va dans `.brick`, les décalages propres à chaque marche."
+    },
+    "center-stage": {
+      "title": "Au centre",
+      "intro": [
+        "Compter les marges devient vite fatigant. La plaque est un conteneur flex (`display: flex`) : elle aligne les briques qu'elle contient sur une ligne, et elle peut les placer pour toi.",
+        "`justify-content` déplace les briques le long de la ligne : `flex-start` (à gauche, par défaut), `center`, `flex-end` (à droite).",
+        "Cette règle va sur le conteneur, `.baseplate`, pas sur les briques."
+      ],
+      "goal": "Centre la brique jaune horizontalement, sans utiliser de marge.",
+      "hints": [
+        "Écris la nouvelle ligne dans `.baseplate { }`.",
+        "Ajoute `justify-content: center;`"
+      ],
+      "recap": "`justify-content` sur le conteneur place toutes ses briques le long de la ligne."
+    },
+    "push-right": {
+      "title": "Pousse jusqu'au bout",
+      "intro": [
+        "`justify-content: flex-end` pousse toutes les briques au bout de la ligne, en gardant leur ordre."
+      ],
+      "goal": "Déplace les trois briques contre le bord droit de la plaque.",
+      "hints": [
+        "Le bout d'une ligne, c'est son côté droit.",
+        "Ajoute `justify-content: flex-end;` à `.baseplate`."
+      ],
+      "recap": "`flex-end` regroupe les briques au bout de la ligne."
+    },
+    "spread-out": {
+      "title": "Répartis-les",
+      "intro": [
+        "`justify-content: space-between` met la première brique au début, la dernière à la fin, et partage l'espace libre à parts égales entre elles.",
+        "Autres options : `space-around` et `space-evenly` mettent aussi de l'espace sur les bords."
+      ],
+      "goal": "Répartis les quatre briques sur toute la largeur de la plaque.",
+      "hints": [
+        "La première brique touche le bord gauche, la dernière le bord droit.",
+        "Utilise `justify-content: space-between;`"
+      ],
+      "recap": "`space-between` répartit les briques avec le même espace entre elles."
+    },
+    "dead-center": {
+      "title": "Pile au centre",
+      "intro": [
+        "`justify-content` agit le long de la ligne (horizontalement). `align-items` agit en travers (verticalement) : `flex-start` (en haut), `center`, `flex-end` (en bas).",
+        "Ensemble, ils peuvent placer une brique pile au milieu de la plaque."
+      ],
+      "goal": "Place la brique exactement au centre de la plaque.",
+      "hints": [
+        "Elle est déjà centrée de gauche à droite. Centre-la maintenant de haut en bas.",
+        "Ajoute `align-items: center;` à `.baseplate`."
+      ],
+      "recap": "Sur une ligne : `justify-content` est horizontal, `align-items` est vertical."
+    },
+    "traffic-light": {
+      "title": "Le feu tricolore",
+      "intro": [
+        "`flex-direction` choisit comment les briques s'alignent : `row` (côte à côte, par défaut) ou `column` (empilées de haut en bas)."
+      ],
+      "goal": "Empile les briques en feu tricolore : rouge en haut, puis jaune, puis vert.",
+      "hints": [
+        "Les briques sont sur une ligne. Tu veux une colonne.",
+        "Ajoute `flex-direction: column;` à `.baseplate`."
+      ],
+      "recap": "`flex-direction: column` empile les briques de haut en bas."
+    },
+    "axis-swap": {
+      "title": "Les axes s'inversent",
+      "intro": [
+        "Dans une colonne, les deux propriétés échangent leurs rôles : `justify-content` déplace maintenant les briques de haut en bas, et `align-items` de gauche à droite.",
+        "Règle simple : `justify-content` suit le sens de la ligne, `align-items` va en travers."
+      ],
+      "goal": "Déplace le feu contre le bord droit, centré de haut en bas.",
+      "hints": [
+        "Centré de haut en bas, dans une colonne : c'est `justify-content`.",
+        "Poussé contre le bord droit, dans une colonne : c'est `align-items`.",
+        "`justify-content: center;` et `align-items: flex-end;`"
+      ],
+      "recap": "Change la direction et les deux axes s'inversent : demande-toi toujours « le long de la ligne ou en travers ? »."
+    },
+    "mind-the-gap": {
+      "title": "Attention à l'écart",
+      "intro": [
+        "`gap` sur un conteneur flex ajoute le même espace entre chaque paire de briques, mais pas avant la première ni après la dernière.",
+        "C'est plus simple que d'ajouter des marges à chaque brique, et les briques restent centrées."
+      ],
+      "goal": "Laisse 2 tenons entre les quatre briques centrées.",
+      "hints": [
+        "`gap` va sur le conteneur, `.baseplate`.",
+        "2 tenons = 40px. Ajoute `gap: 40px;`"
+      ],
+      "recap": "`gap` espace les briques régulièrement sans toucher à leurs marges."
+    },
+    "pyramid": {
+      "title": "La pyramide",
+      "intro": [
+        "C'est le moment de combiner tout ce que tu sais sur flex : la direction, les deux alignements et l'écart.",
+        "Chaque brique a déjà sa taille et sa couleur. Il ne reste que `.baseplate` à travailler."
+      ],
+      "goal": "Construis une pyramide en bas de la plaque, centrée, avec 1 tenon entre les étages.",
+      "hints": [
+        "Les étages sont empilés : commence par `flex-direction: column;`",
+        "Dans une colonne, « en bas » c'est `justify-content` et « centré de gauche à droite » c'est `align-items`.",
+        "`justify-content: flex-end;`, `align-items: center;` et `gap: 20px;`"
+      ],
+      "recap": "La direction, l'alignement sur les deux axes et l'écart : c'est toute la boîte à outils flex."
+    },
+    "add-a-brick": {
+      "title": "Ajoute une brique",
+      "intro": [
+        "Jusqu'ici, le HTML était fixe. Dans cette étape, c'est toi qui l'écris. Ouvre l'onglet HTML : chaque brique est un élément, `<div class=\"brick\"></div>`.",
+        "Un élément a une balise ouvrante `<div>` et une balise fermante `</div>`. L'attribut `class` liste les classes que le CSS peut cibler."
+      ],
+      "goal": "Ajoute une brique bleue après la jaune. Le CSS est prêt.",
+      "hints": [
+        "Copie la ligne de la brique jaune et colle-la en dessous.",
+        "Remplace `yellow` par `blue` dans la classe.",
+        "Ajoute `<div class=\"brick blue\"></div>` sur une nouvelle ligne à la fin."
+      ],
+      "recap": "Le HTML dit ce qu'il y a, le CSS dit à quoi ça ressemble. Une `<div>` = une brique."
+    },
+    "house": {
+      "title": "Construis une maison",
+      "intro": [
+        "Une `<div>` peut contenir d'autres éléments. La div `.row` contient les murs et la porte, et elle peut les aligner elle-même, mais seulement une fois que tu lui donnes `display: flex`.",
+        "La plaque empile le toit et la rangée. La rangée place ses briques côte à côte. Chaque conteneur a ses propres `flex-direction`, `justify-content`, `align-items` et `gap`.",
+        "C'est la construction finale : tu as besoin de tout ce que tu as vu dans les 19 étapes précédentes."
+      ],
+      "goal": "Ajoute le second mur dans le HTML, puis mets en forme la maison : un toit rouge sur des murs blancs avec une porte bleue, centrée sur la plaque.",
+      "hints": [
+        "Le HTML d'abord : dans `.row`, ajoute `<div class=\"brick wall\"></div>` après la porte.",
+        "Briques : toit `padding: 20px 80px;`, mur `padding: 40px 20px;`, porte `padding: 30px 20px;`, chacune avec sa couleur.",
+        "`.baseplate` : `flex-direction: column;` avec `justify-content: center;` et `align-items: center;`",
+        "`.row` : `display: flex;`, `align-items: flex-end;` et `gap: 20px;`"
+      ],
+      "recap": "Des conteneurs dans des conteneurs : c'est comme ça que toutes les vraies pages web sont mises en page. Bien construit !"
+    }
+  }
+}
