@@ -3,10 +3,12 @@
  * @typedef {import('./distanceUnit.js').DistanceUnit[keyof import('./distanceUnit.js').DistanceUnit]} DistanceUnitValue
  * @typedef {import('./buildIssue.js').BuildIssue[keyof import('./buildIssue.js').BuildIssue]} BuildIssueValue
  * @typedef {import('./lintWarning.js').LintWarning[keyof import('./lintWarning.js').LintWarning]} LintWarningValue
+ * @typedef {import('./language.js').Language[keyof import('./language.js').Language]} LanguageValue
  */
 
 /**
- * Its texts live in the translations, under `levels.<id>`.
+ * Its texts live in the translations, under `levels.<id>`. The `{{key}}` placeholders in its code are comments,
+ * translated under `codeComments.<key>`.
  * @typedef {Object} Level
  * @property {string} id
  * @property {string} concept

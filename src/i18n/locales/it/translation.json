@@ -1,0 +1,392 @@
+{
+  "app": {
+    "name": "Mattoncino dopo mattoncino"
+  },
+  "language": {
+    "label": "Lingua",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "bothSides": "10 + 10 = 20px di larghezza e di altezza",
+    "longSize": "20px di altezza, 60px di larghezza",
+    "standingSize": "60px di altezza, 20px di larghezza",
+    "largeOnly": "solo il mattoncino grande",
+    "square": "2 × 2 bottoncini, verde",
+    "long": "6 bottoncini di larghezza, 2 di altezza, arancione",
+    "post": "1 bottoncino di larghezza, 5 di altezza, viola",
+    "downRight": "40px in basso, 20px a destra",
+    "alreadySet": "Già impostato",
+    "atBottom": "mattoncini in basso",
+    "verticalNow": "ora in verticale!",
+    "houseBaseplate": "Impila il tetto e la fila, centrati sulla piastra",
+    "houseRow": "Muri e porta affiancati, a 1 bottoncino di distanza, appoggiati in basso",
+    "roof": "8 bottoncini di larghezza, 2 di altezza, rosso",
+    "wall": "2 bottoncini di larghezza, 4 di altezza, bianco",
+    "door": "2 bottoncini di larghezza, 3 di altezza, blu"
+  },
+  "steps": {
+    "label": "Passi",
+    "step": "Passo {{number}}: {{title}}",
+    "stepDone": "Passo {{number}}: {{title}}, completato",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Passo {{step}} di {{total}}",
+    "goal": "Il tuo obiettivo: ",
+    "firstHint": "Ti serve un indizio?",
+    "nextHint": "Un altro indizio",
+    "hintCount": "{{current}} di {{total}}",
+    "showSolution": "Mostrami la soluzione",
+    "confirmLabel": "Sostituire il tuo codice con la soluzione?",
+    "confirmText": "Il tuo codice verrà sostituito dalla soluzione.",
+    "replaceCode": "Sostituisci il mio codice",
+    "keepTrying": "Continuo a provare"
+  },
+  "editor": {
+    "label": "Editor di codice",
+    "files": "File",
+    "tabs": {
+      "html": "index.html",
+      "css": "style.css"
+    },
+    "code": {
+      "html": "Codice HTML",
+      "css": "Codice CSS"
+    },
+    "startOver": "Ricomincia",
+    "htmlEditable": "Questo HTML va dentro `<div class=\"baseplate\">`.",
+    "htmlFixed": "In questo passo l'HTML è fisso: cambia l'aspetto in <strong>style.css</strong>."
+  },
+  "preview": {
+    "label": "Anteprima",
+    "address": "bricks://step-{{step}}/index.html",
+    "showTarget": "Mostra il modello",
+    "yourBuild": "La tua costruzione",
+    "targetBuild": "Costruzione modello"
+  },
+  "check": {
+    "title": "Verifica",
+    "count_one": "{{placed}} mattoncino su {{count}} al suo posto",
+    "count_other": "{{placed}} mattoncini su {{count}} al loro posto",
+    "inPlace": "al suo posto",
+    "unnamedBrick": "mattoncino {{number}}",
+    "solved": "Passo completato!",
+    "finished": "Hai completato tutti i passi!",
+    "nextStep": "Passo successivo",
+    "issues": {
+      "tooWide": "{{distance}} troppo largo",
+      "tooNarrow": "{{distance}} troppo stretto",
+      "tooTall": "{{distance}} troppo alto",
+      "tooShort": "{{distance}} troppo basso",
+      "tooFarRight": "{{distance}} troppo a destra",
+      "tooFarLeft": "{{distance}} troppo a sinistra",
+      "tooLow": "{{distance}} troppo in basso",
+      "tooHigh": "{{distance}} troppo in alto",
+      "wrongColor": "dovrebbe essere {{color}}",
+      "stayUnpainted": "dovrebbe restare senza colore",
+      "missing": "manca: aggiungilo nell'HTML",
+      "extra": "non fa parte di questa costruzione: toglilo"
+    },
+    "distance": {
+      "stud_one": "{{count}} bottoncino",
+      "stud_other": "{{count}} bottoncini",
+      "px": "{{count}}px"
+    },
+    "colors": {
+      "red": "rosso",
+      "yellow": "giallo",
+      "blue": "blu",
+      "green": "verde",
+      "orange": "arancione",
+      "purple": "viola",
+      "white": "bianco",
+      "black": "nero"
+    },
+    "warnings": {
+      "unmatchedClosingBrace": "Riga {{line}}: c'è una } senza la { corrispondente.",
+      "missingSemicolon": "Riga {{line}}: forse manca un ; alla fine della riga.",
+      "missingColon": "Riga {{line}}: scrivi : tra la proprietà e il suo valore.",
+      "missingUnit": "Riga {{line}}: aggiungi un'unità al numero, come 20px.",
+      "unclosedBrace": "Una { non viene mai chiusa: aggiungi una } alla fine della regola."
+    }
+  },
+  "levels": {
+    "first-brick": {
+      "title": "Il tuo primo mattoncino",
+      "intro": [
+        "Ogni mattoncino è un `<div>` vuoto. Senza niente dentro, non ha nessuna dimensione. `padding` aggiunge spazio all'interno del mattoncino, ed è quello spazio che vedi.",
+        "`padding: 10px` aggiunge 10px su ogni lato, quindi il mattoncino diventa 20px × 20px: esattamente un bottoncino."
+      ],
+      "goal": "Fai un mattoncino largo 2 bottoncini e alto 2 bottoncini (40px × 40px).",
+      "hints": [
+        "Il padding si aggiunge su entrambi i lati: sinistra + destra dà la larghezza, sopra + sotto dà l'altezza.",
+        "Ti servono 40px in tutto, quindi ogni lato ne prende la metà.",
+        "Cambia il valore in `padding: 20px;`"
+      ],
+      "recap": "`padding` fa crescere un mattoncino dall'interno. Metà della dimensione che vuoi va su ogni lato."
+    },
+    "long-brick": {
+      "title": "Un mattoncino lungo",
+      "intro": [
+        "`padding` accetta due valori: il primo per sopra e sotto, il secondo per sinistra e destra.",
+        "È così che ottieni mattoncini lunghi invece di quadrati."
+      ],
+      "goal": "Fai un mattoncino largo 4 bottoncini e alto 2 (80px × 40px).",
+      "hints": [
+        "L'altezza resta 40px, quindi sopra e sotto restano a 20px ciascuno.",
+        "La larghezza deve essere 80px: 40px a sinistra e 40px a destra.",
+        "Scrivi `padding: 20px 40px;`"
+      ],
+      "recap": "Con due valori, `padding: vertical horizontal;` ti permette di dare forma al mattoncino."
+    },
+    "standing-brick": {
+      "title": "Giralo",
+      "intro": [
+        "Scambia i due valori e il mattoncino si gira: un primo valore grande lo rende alto, un secondo valore grande lo rende largo."
+      ],
+      "goal": "Fai un mattoncino largo 1 bottoncino e alto 4 (20px × 80px).",
+      "hints": [
+        "Alto vuol dire un primo valore grande (sopra e sotto).",
+        "Altezza 80px → 40px sopra e sotto. Larghezza 20px → 10px a sinistra e a destra.",
+        "Scrivi `padding: 40px 10px;`"
+      ],
+      "recap": "Il primo valore controlla l'altezza, il secondo la larghezza."
+    },
+    "two-sizes": {
+      "title": "Due mattoncini, due misure",
+      "intro": [
+        "Un mattoncino può avere più classi. `class=\"brick small\"` vuol dire che il mattoncino riceve le regole di `.brick` e quelle di `.small`.",
+        "Le regole di `.brick` valgono per tutti i mattoncini. Quelle di `.small` o `.large` valgono solo per quel mattoncino, e vincono su `.brick` perché vengono dopo nel file."
+      ],
+      "goal": "Fai il mattoncino piccolo di 2 × 2 bottoncini e quello grande largo 6 bottoncini e alto 4.",
+      "hints": [
+        "Scrivi il padding dentro `.small { }` e `.large { }`, non in `.brick`.",
+        "Piccolo: 40px × 40px. Grande: 120px di larghezza, 80px di altezza.",
+        "`.small { padding: 20px; }` e `.large { padding: 40px 60px; }`"
+      ],
+      "recap": "Le regole comuni vanno su `.brick`; ogni classe in più aggiunge ciò che rende speciale un mattoncino."
+    },
+    "paint-it": {
+      "title": "Dipingilo di rosso",
+      "intro": [
+        "All'inizio i mattoncini non sono dipinti. `background-color` dipinge l'interno del mattoncino, padding compreso.",
+        "Il CSS conosce nomi di colori come `red`, `yellow`, `blue`, `green`, `orange`, `purple`, `white` e `black`."
+      ],
+      "goal": "Dipingi di rosso il mattoncino lungo.",
+      "hints": [
+        "Aggiungi una nuova riga dentro `.brick { }`. Ogni riga è `property: value;`",
+        "Scrivi `background-color: red;` sotto il padding."
+      ],
+      "recap": "`background-color` dipinge il mattoncino. Non dimenticare il `;` alla fine di ogni riga."
+    },
+    "three-colors": {
+      "title": "Tre colori",
+      "intro": [
+        "I tre mattoncini condividono le regole di `.brick`, quindi hanno la stessa misura. La loro seconda classe ti permette di dipingerli in modo diverso."
+      ],
+      "goal": "Dipingi i mattoncini di rosso, giallo e blu, da sinistra a destra.",
+      "hints": [
+        "`.one` è già fatto. Copia la sua riga in `.two` e `.three`.",
+        "Cambia il nome del colore: `yellow` per `.two`, `blue` per `.three`."
+      ],
+      "recap": "Una classe per ciò che i mattoncini hanno in comune, una per ciò che rende diverso ciascuno."
+    },
+    "brick-sorter": {
+      "title": "Smista i mattoncini",
+      "intro": [
+        "Ora misura e colore insieme. Ogni mattoncino ha bisogno del suo `padding` e del suo `background-color`.",
+        "Guarda i contorni tratteggiati nell'anteprima: mostrano dove deve finire ogni mattoncino e di che colore deve essere."
+      ],
+      "goal": "Un quadrato verde di 2 × 2, un mattoncino arancione largo 6 bottoncini e alto 2, e un palo viola largo 1 bottoncino e alto 5.",
+      "hints": [
+        "Ogni bottoncino misura 20px. Dividi per 2 la misura che vuoi per ottenere il padding di un lato.",
+        "Quadrato: `padding: 20px;` Lungo: `padding: 20px 60px;` Palo: `padding: 50px 10px;`",
+        "Poi aggiungi `background-color: green;`, `orange` e `purple`."
+      ],
+      "recap": "La misura con `padding`, il colore con `background-color`: ora sai fare qualsiasi mattoncino."
+    },
+    "move-right": {
+      "title": "Spostalo a destra",
+      "intro": [
+        "`padding` è lo spazio dentro il mattoncino. `margin` è lo spazio fuori: allontana il mattoncino da ciò che lo circonda.",
+        "`margin-left: 40px` lascia 40px vuoti a sinistra del mattoncino, che quindi si sposta di 2 bottoncini a destra."
+      ],
+      "goal": "Sposta il mattoncino rosso di 6 bottoncini a destra.",
+      "hints": [
+        "Ti serve spazio vuoto a sinistra del mattoncino: `margin-left`.",
+        "6 bottoncini × 20px = 120px.",
+        "Aggiungi `margin-left: 120px;`"
+      ],
+      "recap": "`margin` è spazio invisibile fuori da un mattoncino. Lo sposta senza cambiarne la misura."
+    },
+    "move-down": {
+      "title": "Giù e di lato",
+      "intro": [
+        "`margin-top` spinge un mattoncino verso il basso. Combinalo con `margin-left` per mettere un mattoncino in qualsiasi punto della piastra.",
+        "Esiste anche una forma breve con quattro valori, in senso orario partendo dall'alto: `margin: top right bottom left;`"
+      ],
+      "goal": "Metti il mattoncino a 10 bottoncini da sinistra e a 4 bottoncini dall'alto.",
+      "hints": [
+        "Due margini: uno da sinistra, uno dall'alto.",
+        "10 bottoncini = 200px da sinistra, 4 bottoncini = 80px dall'alto.",
+        "`margin-left: 200px;` e `margin-top: 80px;` (oppure `margin: 80px 0 0 200px;`)"
+      ],
+      "recap": "`margin-top` e `margin-left` mettono un mattoncino in un punto preciso."
+    },
+    "staircase": {
+      "title": "La scala",
+      "intro": [
+        "I margini di un mattoncino spingono anche i vicini. `margin-right` su ogni mattoncino lascia uno spazio dopo ciascuno.",
+        "Dai a ogni gradino il suo `margin-top` per metterlo più in basso del precedente."
+      ],
+      "goal": "Costruisci una scala: un bottoncino tra i gradini, ogni gradino 2 bottoncini più in basso del precedente.",
+      "hints": [
+        "Lo spazio tra i gradini è uguale per tutti: metti `margin-right: 20px;` in `.brick`.",
+        "Il primo gradino resta in alto. Il secondo scende di 2 bottoncini, il terzo di 4.",
+        "`.two { margin-top: 40px; }` e `.three { margin-top: 80px; }`"
+      ],
+      "recap": "Un margine spinge anche i vicini. Lo spazio comune va su `.brick`, gli spostamenti speciali su ogni gradino."
+    },
+    "center-stage": {
+      "title": "Al centro",
+      "intro": [
+        "Contare i margini stanca. La piastra è un contenitore flex (`display: flex`): mette in fila i mattoncini che contiene, e può posizionarli al posto tuo.",
+        "`justify-content` sposta i mattoncini lungo la fila: `flex-start` (a sinistra, il valore predefinito), `center`, `flex-end` (a destra).",
+        "Questa regola va sul contenitore, `.baseplate`, non sui mattoncini."
+      ],
+      "goal": "Centra orizzontalmente il mattoncino giallo, senza usare margin.",
+      "hints": [
+        "Scrivi la nuova riga dentro `.baseplate { }`.",
+        "Aggiungi `justify-content: center;`"
+      ],
+      "recap": "`justify-content` sul contenitore posiziona tutti i suoi mattoncini lungo la fila."
+    },
+    "push-right": {
+      "title": "Spingili in fondo",
+      "intro": [
+        "`justify-content: flex-end` spinge tutti i mattoncini in fondo alla fila, mantenendo il loro ordine."
+      ],
+      "goal": "Sposta i tre mattoncini contro il bordo destro della piastra.",
+      "hints": [
+        "Il fondo di una fila è il suo lato destro.",
+        "Aggiungi `justify-content: flex-end;` a `.baseplate`."
+      ],
+      "recap": "`flex-end` raggruppa i mattoncini in fondo alla fila."
+    },
+    "spread-out": {
+      "title": "Distribuiscili",
+      "intro": [
+        "`justify-content: space-between` mette il primo mattoncino all'inizio, l'ultimo alla fine, e divide in parti uguali lo spazio libero tra loro.",
+        "Altre opzioni: `space-around` e `space-evenly` lasciano spazio anche ai bordi."
+      ],
+      "goal": "Distribuisci i quattro mattoncini su tutta la larghezza della piastra.",
+      "hints": [
+        "Il primo mattoncino tocca il bordo sinistro, l'ultimo quello destro.",
+        "Usa `justify-content: space-between;`"
+      ],
+      "recap": "`space-between` distribuisce i mattoncini con lo stesso spazio tra loro."
+    },
+    "dead-center": {
+      "title": "Proprio al centro",
+      "intro": [
+        "`justify-content` agisce lungo la fila (in orizzontale). `align-items` agisce di traverso (in verticale): `flex-start` (in alto), `center`, `flex-end` (in basso).",
+        "Insieme possono mettere un mattoncino proprio al centro della piastra."
+      ],
+      "goal": "Metti il mattoncino esattamente al centro della piastra.",
+      "hints": [
+        "È già centrato da sinistra a destra. Ora centralo dall'alto in basso.",
+        "Aggiungi `align-items: center;` a `.baseplate`."
+      ],
+      "recap": "In una fila: `justify-content` è orizzontale, `align-items` è verticale."
+    },
+    "traffic-light": {
+      "title": "Il semaforo",
+      "intro": [
+        "`flex-direction` sceglie come si allineano i mattoncini: `row` (affiancati, il valore predefinito) o `column` (impilati dall'alto in basso)."
+      ],
+      "goal": "Impila i mattoncini come un semaforo: rosso in alto, poi giallo, poi verde.",
+      "hints": [
+        "I mattoncini sono in fila. Tu vuoi una colonna.",
+        "Aggiungi `flex-direction: column;` a `.baseplate`."
+      ],
+      "recap": "`flex-direction: column` impila i mattoncini dall'alto in basso."
+    },
+    "axis-swap": {
+      "title": "Gli assi si scambiano",
+      "intro": [
+        "In una colonna, le due proprietà si scambiano i ruoli: `justify-content` ora sposta i mattoncini su e giù, e `align-items` a sinistra e a destra.",
+        "Regola pratica: `justify-content` segue la direzione della linea, `align-items` va di traverso."
+      ],
+      "goal": "Sposta il semaforo contro il bordo destro, centrato dall'alto in basso.",
+      "hints": [
+        "Centrato dall'alto in basso, in una colonna: è `justify-content`.",
+        "Spinto contro il bordo destro, in una colonna: è `align-items`.",
+        "`justify-content: center;` e `align-items: flex-end;`"
+      ],
+      "recap": "Cambia la direzione e i due assi si scambiano: chiediti sempre «lungo la linea o di traverso?»."
+    },
+    "mind-the-gap": {
+      "title": "Attenzione allo spazio",
+      "intro": [
+        "`gap` su un contenitore flex aggiunge lo stesso spazio tra ogni coppia di mattoncini, ma non prima del primo né dopo l'ultimo.",
+        "È più semplice che aggiungere margini a ogni mattoncino, e i mattoncini restano centrati."
+      ],
+      "goal": "Lascia 2 bottoncini tra i quattro mattoncini centrati.",
+      "hints": [
+        "`gap` va sul contenitore, `.baseplate`.",
+        "2 bottoncini = 40px. Aggiungi `gap: 40px;`"
+      ],
+      "recap": "`gap` distanzia i mattoncini in modo uniforme senza toccare i loro margini."
+    },
+    "pyramid": {
+      "title": "La piramide",
+      "intro": [
+        "È il momento di combinare tutto ciò che sai su flex: direzione, i due allineamenti e gap.",
+        "Ogni mattoncino ha già la sua misura e il suo colore. Resta da sistemare solo `.baseplate`."
+      ],
+      "goal": "Costruisci una piramide in fondo alla piastra, centrata, con 1 bottoncino tra i piani.",
+      "hints": [
+        "I piani sono impilati: comincia con `flex-direction: column;`",
+        "In una colonna, «in basso» è `justify-content` e «centrato da sinistra a destra» è `align-items`.",
+        "`justify-content: flex-end;`, `align-items: center;` e `gap: 20px;`"
+      ],
+      "recap": "Direzione, allineamento sui due assi e gap: questa è tutta la cassetta degli attrezzi di flex."
+    },
+    "add-a-brick": {
+      "title": "Aggiungi un mattoncino",
+      "intro": [
+        "Finora l'HTML era fisso. In questo passo lo scrivi tu. Apri la scheda HTML: ogni mattoncino è un elemento, `<div class=\"brick\"></div>`.",
+        "Un elemento ha un tag di apertura `<div>` e un tag di chiusura `</div>`. L'attributo `class` elenca le classi a cui il CSS può puntare."
+      ],
+      "goal": "Aggiungi un mattoncino blu dopo quello giallo. Il CSS è pronto.",
+      "hints": [
+        "Copia la riga del mattoncino giallo e incollala sotto.",
+        "Cambia `yellow` in `blue` nella classe.",
+        "Aggiungi `<div class=\"brick blue\"></div>` su una nuova riga alla fine."
+      ],
+      "recap": "L'HTML dice cosa c'è, il CSS dice che aspetto ha. Un `<div>` = un mattoncino."
+    },
+    "house": {
+      "title": "Costruisci una casa",
+      "intro": [
+        "Un `<div>` può contenere altri elementi. Il div `.row` contiene i muri e la porta, e può allinearli da solo, ma solo dopo che gli dai `display: flex`.",
+        "La piastra impila il tetto e la fila. La fila mette i suoi mattoncini uno accanto all'altro. Ogni contenitore ha i suoi `flex-direction`, `justify-content`, `align-items` e `gap`.",
+        "Questa è la costruzione finale: ti serve tutto quello che hai visto nei 19 passi precedenti."
+      ],
+      "goal": "Aggiungi il secondo muro nell'HTML, poi dai stile alla casa: un tetto rosso sopra muri bianchi con una porta blu, centrata sulla piastra.",
+      "hints": [
+        "Prima l'HTML: dentro `.row`, aggiungi `<div class=\"brick wall\"></div>` dopo la porta.",
+        "Mattoncini: tetto `padding: 20px 80px;`, muro `padding: 40px 20px;`, porta `padding: 30px 20px;`, ciascuno con il suo colore.",
+        "`.baseplate`: `flex-direction: column;` con `justify-content: center;` e `align-items: center;`",
+        "`.row`: `display: flex;`, `align-items: flex-end;` e `gap: 20px;`"
+      ],
+      "recap": "Contenitori dentro contenitori: è così che si impagina ogni vera pagina web. Ben costruito!"
+    }
+  }
+}

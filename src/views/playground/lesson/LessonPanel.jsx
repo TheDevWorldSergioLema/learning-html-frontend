@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../../components/button/Button.jsx'
 import { RichText } from '../../../components/rich-text/RichText.jsx'
+import { useCodeComments } from '../../../hooks/useCodeComments.js'
 import { ButtonVariant } from '../../../types/buttonVariant.js'
+import { fillComments } from '../../../utils/codeComments.js'
 import './LessonPanel.scss'
 
 export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution }) {
   const { t } = useTranslation()
+  const comments = useCodeComments()
   const [confirming, setConfirming] = useState(false)
 
   const texts = `levels.${level.id}`
@@ -56,7 +59,7 @@ export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution
           <RichText text={p} />
         </p>
       ))}
-      {level.example && <pre className="example"><code>{level.example}</code></pre>}
+      {level.example && <pre className="example"><code>{fillComments(level.example, comments)}</code></pre>}
 
       <div className="goal">
         <span className="goal-brick" aria-hidden="true" />

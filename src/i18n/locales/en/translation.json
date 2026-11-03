@@ -2,6 +2,34 @@
   "app": {
     "name": "Brick by Brick"
   },
+  "language": {
+    "label": "Language",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "bothSides": "10 + 10 = 20px wide and tall",
+    "longSize": "20px tall, 60px wide",
+    "standingSize": "60px tall, 20px wide",
+    "largeOnly": "only the large brick",
+    "square": "2 × 2 studs, green",
+    "long": "6 studs wide, 2 studs tall, orange",
+    "post": "1 stud wide, 5 studs tall, purple",
+    "downRight": "40px down, 20px right",
+    "alreadySet": "Already set",
+    "atBottom": "bricks at the bottom",
+    "verticalNow": "vertical now!",
+    "houseBaseplate": "Stack the roof and the row, centered on the baseplate",
+    "houseRow": "Walls and door side by side, 1 stud apart, standing on the bottom",
+    "roof": "8 studs wide, 2 studs tall, red",
+    "wall": "2 studs wide, 4 studs tall, white",
+    "door": "2 studs wide, 3 studs tall, blue"
+  },
   "steps": {
     "label": "Steps",
     "step": "Step {{number}}: {{title}}",

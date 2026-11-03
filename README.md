@@ -13,7 +13,10 @@ one idea, shows dashed outlines where the bricks must go, checks the build live 
 | 17–18 | `gap` | even space between bricks |
 | 19–20 | HTML | adding bricks and nesting containers |
 
-There is no backend: progress, code and hints are saved in the browser's `localStorage`.
+The interface and the lessons are available in English (default), French, Spanish, Italian and German, picked
+from the selector at the right of the top bar.
+
+There is no backend: progress, code, hints and the chosen language are saved in the browser's `localStorage`.
 
 ## Run it
 
@@ -46,7 +49,7 @@ One-time setup:
 - React 19, built with Vite
 - CodeMirror 6 (`@uiw/react-codemirror`) for the HTML and CSS editors
 - zustand for the application state
-- i18next / react-i18next for every user-facing text (English only)
+- i18next / react-i18next for every user-facing text (English, French, Spanish, Italian, German)
 - SCSS for the styles, with the design tokens in `src/styles`
 - Vitest, Testing Library and jsdom for the tests
 
@@ -59,17 +62,18 @@ src/
 ├── components/         root components, shared by every feature
 │   ├── button/         Button (primary, secondary, quiet)
 │   ├── icons/          SVG icons as React components, drawn with currentColor
+│   ├── language-select/ LanguageSelect: switches and saves the interface language
 │   ├── rich-text/      RichText: text where `backticks` mark inline code
 │   └── toggle/         Toggle switch
-├── hooks/              shared hooks: useFitScale (scale a box to fit), useLatest (ref to the latest value)
-├── i18n/               i18next setup and locales/en/translation.json
-├── layout/             PublicLayout: top bar with the brand and the step strip
-├── services/           progressService: reads and writes the progress in localStorage
+├── hooks/              shared hooks: useFitScale (scale a box to fit), useLatest (ref to the latest value), useCodeComments (translated code comments)
+├── i18n/               i18next setup and locales/<en|fr|es|it|de>/translation.json
+├── layout/             PublicLayout: top bar with the brand, the step strip and the language selector
+├── services/           progressService and languageService: read and write the progress and the language in localStorage
 ├── stores/             progressStore (zustand): current step, completed steps, code and hints per step
 ├── styles/             _config.scss (tokens), _typography.scss, _mixins.scss, global.scss
 ├── test/               shared test setup, factories and render helpers
-├── types/              enums (EditorTab, BuildIssue, LintWarning, DistanceUnit, ButtonVariant) and JSDoc entities
-├── utils/              frame (preview iframe), compare (build check), cssLint (CSS warnings)
+├── types/              enums (EditorTab, BuildIssue, LintWarning, DistanceUnit, ButtonVariant, Language) and JSDoc entities
+├── utils/              frame (preview iframe), compare (build check), cssLint (CSS warnings), codeComments (translated code comments)
 └── views/
     └── playground/     the only page, its components grouped by feature
         ├── PlaygroundView.jsx
@@ -127,8 +131,13 @@ The preview iframe is a separate document: its look (baseplate, bricks, studs) i
 - Code lives in `src/views/playground/levels.js`: the starter `html`/`css`, a `solutionCss` and/or
   `solutionHtml`, an optional `example`, the `concept` badge, `htmlEditable: true` when the student
   must write HTML and `startTab` to open the HTML tab first.
-- Texts live in `src/i18n/locales/en/translation.json` under `levels.<id>`: `title`, `intro`
+- Texts live in every `src/i18n/locales/<language>/translation.json` under `levels.<id>`: `title`, `intro`
   (paragraphs), `goal`, progressive `hints` and the `recap` shown on success. They accept
-  `` `inline code` ``.
+  `` `inline code` ``, which must stay identical in every language.
+- Comments in the code are written as `/* {{key}} */` placeholders and translated under `codeComments.<key>`
+  (`fillComments` in `src/utils/codeComments.js`), so the starter code, examples and solutions follow the
+  chosen language.
 
-`levels.test.js` checks that every step has a solution that changes something and all its texts.
+`levels.test.js` checks that every step has a solution that changes something, all its texts in every
+language and that the translated comments don't break the CSS. `locales.test.js` checks that every
+language has the same keys, placeholders, inline code and tags as English.

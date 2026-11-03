@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { BrickIcon } from '../components/icons/BrickIcon.jsx'
+import { LanguageSelect } from '../components/language-select/LanguageSelect.jsx'
 import './PublicLayout.scss'
 
 export function PublicLayout({ navigation, children }) {
@@ -13,6 +14,7 @@ export function PublicLayout({ navigation, children }) {
           {t('app.name')}
         </span>
         {navigation}
+        <LanguageSelect />
       </header>
       {children}
     </div>

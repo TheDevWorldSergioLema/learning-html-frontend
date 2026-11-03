@@ -1,0 +1,392 @@
+{
+  "app": {
+    "name": "Stein auf Stein"
+  },
+  "language": {
+    "label": "Sprache",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "bothSides": "10 + 10 = 20px breit und hoch",
+    "longSize": "20px hoch, 60px breit",
+    "standingSize": "60px hoch, 20px breit",
+    "largeOnly": "nur der große Stein",
+    "square": "2 × 2 Noppen, grün",
+    "long": "6 Noppen breit, 2 Noppen hoch, orange",
+    "post": "1 Noppe breit, 5 Noppen hoch, lila",
+    "downRight": "40px nach unten, 20px nach rechts",
+    "alreadySet": "Schon gesetzt",
+    "atBottom": "Steine unten",
+    "verticalNow": "jetzt vertikal!",
+    "houseBaseplate": "Dach und Reihe stapeln, zentriert auf der Platte",
+    "houseRow": "Wände und Tür nebeneinander, 1 Noppe Abstand, unten stehend",
+    "roof": "8 Noppen breit, 2 Noppen hoch, rot",
+    "wall": "2 Noppen breit, 4 Noppen hoch, weiß",
+    "door": "2 Noppen breit, 3 Noppen hoch, blau"
+  },
+  "steps": {
+    "label": "Schritte",
+    "step": "Schritt {{number}}: {{title}}",
+    "stepDone": "Schritt {{number}}: {{title}}, erledigt",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Schritt {{step}} von {{total}}",
+    "goal": "Dein Ziel: ",
+    "firstHint": "Brauchst du einen Tipp?",
+    "nextHint": "Noch ein Tipp",
+    "hintCount": "{{current}} von {{total}}",
+    "showSolution": "Zeig mir die Lösung",
+    "confirmLabel": "Deinen Code durch die Lösung ersetzen?",
+    "confirmText": "Dein Code wird durch die Lösung ersetzt.",
+    "replaceCode": "Meinen Code ersetzen",
+    "keepTrying": "Weiter probieren"
+  },
+  "editor": {
+    "label": "Code-Editor",
+    "files": "Datei",
+    "tabs": {
+      "html": "index.html",
+      "css": "style.css"
+    },
+    "code": {
+      "html": "HTML-Code",
+      "css": "CSS-Code"
+    },
+    "startOver": "Neu anfangen",
+    "htmlEditable": "Dieses HTML steht innerhalb von `<div class=\"baseplate\">`.",
+    "htmlFixed": "Das HTML ist in diesem Schritt fest: Ändere das Aussehen in <strong>style.css</strong>."
+  },
+  "preview": {
+    "label": "Vorschau",
+    "address": "bricks://step-{{step}}/index.html",
+    "showTarget": "Vorlage zeigen",
+    "yourBuild": "Dein Bau",
+    "targetBuild": "Vorlage"
+  },
+  "check": {
+    "title": "Bauprüfung",
+    "count_one": "{{placed}} von {{count}} Stein an seinem Platz",
+    "count_other": "{{placed}} von {{count}} Steinen an ihrem Platz",
+    "inPlace": "an seinem Platz",
+    "unnamedBrick": "Stein {{number}}",
+    "solved": "Schritt geschafft!",
+    "finished": "Du hast alle Schritte geschafft!",
+    "nextStep": "Nächster Schritt",
+    "issues": {
+      "tooWide": "{{distance}} zu breit",
+      "tooNarrow": "{{distance}} zu schmal",
+      "tooTall": "{{distance}} zu hoch",
+      "tooShort": "{{distance}} zu niedrig",
+      "tooFarRight": "{{distance}} zu weit rechts",
+      "tooFarLeft": "{{distance}} zu weit links",
+      "tooLow": "{{distance}} zu tief",
+      "tooHigh": "{{distance}} zu weit oben",
+      "wrongColor": "sollte {{color}} sein",
+      "stayUnpainted": "sollte ungefärbt bleiben",
+      "missing": "fehlt: füge ihn im HTML hinzu",
+      "extra": "gehört nicht zu diesem Bau: entferne ihn"
+    },
+    "distance": {
+      "stud_one": "{{count}} Noppe",
+      "stud_other": "{{count}} Noppen",
+      "px": "{{count}}px"
+    },
+    "colors": {
+      "red": "rot",
+      "yellow": "gelb",
+      "blue": "blau",
+      "green": "grün",
+      "orange": "orange",
+      "purple": "lila",
+      "white": "weiß",
+      "black": "schwarz"
+    },
+    "warnings": {
+      "unmatchedClosingBrace": "Zeile {{line}}: Hier steht eine } ohne passende {.",
+      "missingSemicolon": "Zeile {{line}}: Am Ende der Zeile fehlt vielleicht ein ;.",
+      "missingColon": "Zeile {{line}}: Schreibe einen : zwischen die Eigenschaft und ihren Wert.",
+      "missingUnit": "Zeile {{line}}: Gib der Zahl eine Einheit, zum Beispiel 20px.",
+      "unclosedBrace": "Eine { wird nie geschlossen: Füge am Ende der Regel eine } hinzu."
+    }
+  },
+  "levels": {
+    "first-brick": {
+      "title": "Dein erster Stein",
+      "intro": [
+        "Jeder Stein ist ein leeres `<div>`. Ohne Inhalt hat er gar keine Größe. `padding` fügt Platz im Inneren des Steins hinzu, und diesen Platz siehst du.",
+        "`padding: 10px` fügt auf jeder Seite 10px hinzu, also wird der Stein 20px × 20px groß: genau eine Noppe."
+      ],
+      "goal": "Mach den Stein 2 Noppen breit und 2 Noppen hoch (40px × 40px).",
+      "hints": [
+        "Padding kommt auf beide Seiten: links + rechts ergibt die Breite, oben + unten die Höhe.",
+        "Du brauchst insgesamt 40px, also bekommt jede Seite die Hälfte.",
+        "Ändere den Wert in `padding: 20px;`"
+      ],
+      "recap": "`padding` lässt einen Stein von innen wachsen. Die Hälfte der gewünschten Größe kommt auf jede Seite."
+    },
+    "long-brick": {
+      "title": "Ein langer Stein",
+      "intro": [
+        "`padding` kann zwei Werte haben: Der erste gilt für oben und unten, der zweite für links und rechts.",
+        "So bekommst du lange Steine statt Quadraten."
+      ],
+      "goal": "Mach einen Stein, der 4 Noppen breit und 2 Noppen hoch ist (80px × 40px).",
+      "hints": [
+        "Die Höhe bleibt 40px, also bleiben oben und unten bei je 20px.",
+        "Die Breite muss 80px sein: 40px links und 40px rechts.",
+        "Schreibe `padding: 20px 40px;`"
+      ],
+      "recap": "Mit zwei Werten gibt `padding: vertical horizontal;` dem Stein seine Form."
+    },
+    "standing-brick": {
+      "title": "Dreh ihn um",
+      "intro": [
+        "Tausche die beiden Werte und der Stein dreht sich: Ein großer erster Wert macht ihn hoch, ein großer zweiter Wert macht ihn breit."
+      ],
+      "goal": "Mach einen Stein, der 1 Noppe breit und 4 Noppen hoch ist (20px × 80px).",
+      "hints": [
+        "Hoch heißt: ein großer erster Wert (oben und unten).",
+        "Höhe 80px → 40px oben und unten. Breite 20px → 10px links und rechts.",
+        "Schreibe `padding: 40px 10px;`"
+      ],
+      "recap": "Der erste Wert bestimmt die Höhe, der zweite die Breite."
+    },
+    "two-sizes": {
+      "title": "Zwei Steine, zwei Größen",
+      "intro": [
+        "Ein Stein kann mehrere Klassen haben. `class=\"brick small\"` heißt: Der Stein bekommt die Regeln von `.brick` und die Regeln von `.small`.",
+        "Regeln in `.brick` gelten für jeden Stein. Regeln in `.small` oder `.large` gelten nur für diesen Stein, und sie gewinnen gegen `.brick`, weil sie weiter unten in der Datei stehen."
+      ],
+      "goal": "Mach den kleinen Stein 2 × 2 Noppen groß und den großen Stein 6 Noppen breit und 4 Noppen hoch.",
+      "hints": [
+        "Schreibe das Padding in `.small { }` und `.large { }`, nicht in `.brick`.",
+        "Klein: 40px × 40px. Groß: 120px breit, 80px hoch.",
+        "`.small { padding: 20px; }` und `.large { padding: 40px 60px; }`"
+      ],
+      "recap": "Gemeinsame Regeln kommen in `.brick`; jede weitere Klasse fügt hinzu, was einen Stein besonders macht."
+    },
+    "paint-it": {
+      "title": "Mal ihn rot an",
+      "intro": [
+        "Steine sind am Anfang nicht angemalt. `background-color` färbt das Innere des Steins, Padding inklusive.",
+        "CSS kennt Farbnamen wie `red`, `yellow`, `blue`, `green`, `orange`, `purple`, `white` und `black`."
+      ],
+      "goal": "Mal den langen Stein rot an.",
+      "hints": [
+        "Füge in `.brick { }` eine neue Zeile hinzu. Jede Zeile lautet `property: value;`",
+        "Schreibe `background-color: red;` unter das Padding."
+      ],
+      "recap": "`background-color` färbt den Stein. Vergiss das `;` am Ende jeder Zeile nicht."
+    },
+    "three-colors": {
+      "title": "Drei Farben",
+      "intro": [
+        "Alle drei Steine teilen sich die Regeln von `.brick`, deshalb sind sie gleich groß. Mit ihrer zweiten Klasse kannst du jeden anders anmalen."
+      ],
+      "goal": "Mal die Steine von links nach rechts rot, gelb und blau an.",
+      "hints": [
+        "`.one` ist schon fertig. Kopiere seine Zeile in `.two` und `.three`.",
+        "Ändere den Farbnamen: `yellow` für `.two`, `blue` für `.three`."
+      ],
+      "recap": "Eine Klasse für das, was die Steine gemeinsam haben, eine Klasse für das, was jeden Stein anders macht."
+    },
+    "brick-sorter": {
+      "title": "Steine sortieren",
+      "intro": [
+        "Jetzt Größe und Farbe zusammen. Jeder Stein braucht sein eigenes `padding` und seine eigene `background-color`.",
+        "Sieh dir die gestrichelten Umrisse in der Vorschau an: Sie zeigen, wo jeder Stein landen muss und welche Farbe er braucht."
+      ],
+      "goal": "Ein grünes Quadrat mit 2 × 2 Noppen, ein oranger Stein 6 Noppen breit und 2 hoch, und ein lila Pfosten 1 Noppe breit und 5 hoch.",
+      "hints": [
+        "Jede Noppe ist 20px groß. Teile die gewünschte Größe durch 2, dann hast du das Padding einer Seite.",
+        "Quadrat: `padding: 20px;` Lang: `padding: 20px 60px;` Pfosten: `padding: 50px 10px;`",
+        "Füge dann `background-color: green;`, `orange` und `purple` hinzu."
+      ],
+      "recap": "Größe mit `padding`, Farbe mit `background-color`: Jetzt kannst du jeden Stein bauen."
+    },
+    "move-right": {
+      "title": "Nach rechts",
+      "intro": [
+        "`padding` ist Platz im Stein. `margin` ist Platz außerhalb: Es schiebt den Stein von dem weg, was um ihn herum ist.",
+        "`margin-left: 40px` lässt links vom Stein 40px frei, also rückt er 2 Noppen nach rechts."
+      ],
+      "goal": "Schiebe den roten Stein 6 Noppen nach rechts.",
+      "hints": [
+        "Du brauchst freien Platz links vom Stein: `margin-left`.",
+        "6 Noppen × 20px = 120px.",
+        "Füge `margin-left: 120px;` hinzu."
+      ],
+      "recap": "`margin` ist unsichtbarer Platz außerhalb eines Steins. Es bewegt den Stein, ohne seine Größe zu ändern."
+    },
+    "move-down": {
+      "title": "Runter und hinüber",
+      "intro": [
+        "`margin-top` schiebt einen Stein nach unten. Kombiniere es mit `margin-left`, um einen Stein irgendwo auf die Platte zu setzen.",
+        "Es gibt auch eine Kurzform mit vier Werten, im Uhrzeigersinn von oben: `margin: top right bottom left;`"
+      ],
+      "goal": "Setze den Stein 10 Noppen von links und 4 Noppen von oben.",
+      "hints": [
+        "Zwei Abstände: einer von links, einer von oben.",
+        "10 Noppen = 200px von links, 4 Noppen = 80px von oben.",
+        "`margin-left: 200px;` und `margin-top: 80px;` (oder `margin: 80px 0 0 200px;`)"
+      ],
+      "recap": "`margin-top` und `margin-left` setzen einen Stein an eine genaue Stelle."
+    },
+    "staircase": {
+      "title": "Treppe",
+      "intro": [
+        "Die Abstände eines Steins schieben auch seine Nachbarn. `margin-right` an jedem Stein lässt nach jedem eine Lücke.",
+        "Gib jeder Stufe ihr eigenes `margin-top`, damit sie tiefer liegt als die vorige."
+      ],
+      "goal": "Bau eine Treppe: eine Noppe zwischen den Stufen, jede Stufe 2 Noppen tiefer als die vorige.",
+      "hints": [
+        "Der Abstand zwischen den Stufen ist für alle gleich: Schreibe `margin-right: 20px;` in `.brick`.",
+        "Die erste Stufe bleibt oben. Die zweite geht 2 Noppen nach unten, die dritte 4.",
+        "`.two { margin-top: 40px; }` und `.three { margin-top: 80px; }`"
+      ],
+      "recap": "Ein Abstand schiebt auch die Nachbarn. Gemeinsame Abstände kommen in `.brick`, besondere Versätze an jede Stufe."
+    },
+    "center-stage": {
+      "title": "In die Mitte",
+      "intro": [
+        "Abstände zu zählen wird mühsam. Die Platte ist ein Flex-Container (`display: flex`): Sie reiht die Steine in ihr nebeneinander auf und kann sie für dich platzieren.",
+        "`justify-content` verschiebt die Steine entlang der Reihe: `flex-start` (links, der Standard), `center`, `flex-end` (rechts).",
+        "Diese Regel gehört an den Container, `.baseplate`, nicht an die Steine."
+      ],
+      "goal": "Zentriere den gelben Stein waagerecht, ohne margin.",
+      "hints": [
+        "Schreibe die neue Zeile in `.baseplate { }`.",
+        "Füge `justify-content: center;` hinzu."
+      ],
+      "recap": "`justify-content` am Container platziert alle seine Steine entlang der Reihe."
+    },
+    "push-right": {
+      "title": "Ans Ende schieben",
+      "intro": [
+        "`justify-content: flex-end` schiebt alle Steine ans Ende der Reihe und behält ihre Reihenfolge."
+      ],
+      "goal": "Schiebe die drei Steine an den rechten Rand der Platte.",
+      "hints": [
+        "Das Ende einer Reihe ist ihre rechte Seite.",
+        "Füge `justify-content: flex-end;` zu `.baseplate` hinzu."
+      ],
+      "recap": "`flex-end` packt die Steine ans Ende der Reihe."
+    },
+    "spread-out": {
+      "title": "Verteilen",
+      "intro": [
+        "`justify-content: space-between` setzt den ersten Stein an den Anfang, den letzten ans Ende und verteilt den freien Platz gleichmäßig dazwischen.",
+        "Weitere Möglichkeiten: `space-around` und `space-evenly` lassen auch an den Rändern Platz."
+      ],
+      "goal": "Verteile die vier Steine über die ganze Breite der Platte.",
+      "hints": [
+        "Der erste Stein berührt den linken Rand, der letzte den rechten.",
+        "Nimm `justify-content: space-between;`"
+      ],
+      "recap": "`space-between` verteilt Steine mit gleichem Abstand dazwischen."
+    },
+    "dead-center": {
+      "title": "Genau in der Mitte",
+      "intro": [
+        "`justify-content` wirkt entlang der Reihe (waagerecht). `align-items` wirkt quer dazu (senkrecht): `flex-start` (oben), `center`, `flex-end` (unten).",
+        "Zusammen setzen sie einen Stein genau in die Mitte der Platte."
+      ],
+      "goal": "Setze den Stein genau in die Mitte der Platte.",
+      "hints": [
+        "Von links nach rechts ist er schon zentriert. Zentriere ihn jetzt von oben nach unten.",
+        "Füge `align-items: center;` zu `.baseplate` hinzu."
+      ],
+      "recap": "In einer Reihe: `justify-content` ist waagerecht, `align-items` ist senkrecht."
+    },
+    "traffic-light": {
+      "title": "Ampel",
+      "intro": [
+        "`flex-direction` bestimmt, wie sich die Steine aufreihen: `row` (nebeneinander, der Standard) oder `column` (von oben nach unten gestapelt)."
+      ],
+      "goal": "Staple die Steine zu einer Ampel: oben rot, dann gelb, dann grün.",
+      "hints": [
+        "Die Steine stehen in einer Reihe. Du willst eine Spalte.",
+        "Füge `flex-direction: column;` zu `.baseplate` hinzu."
+      ],
+      "recap": "`flex-direction: column` stapelt Steine von oben nach unten."
+    },
+    "axis-swap": {
+      "title": "Die Achsen tauschen",
+      "intro": [
+        "In einer Spalte tauschen die beiden Eigenschaften ihre Rollen: `justify-content` bewegt die Steine jetzt nach oben und unten, `align-items` nach links und rechts.",
+        "Faustregel: `justify-content` folgt der Richtung der Linie, `align-items` geht quer dazu."
+      ],
+      "goal": "Schiebe die Ampel an den rechten Rand, von oben nach unten zentriert.",
+      "hints": [
+        "Von oben nach unten zentriert, in einer Spalte: Das ist `justify-content`.",
+        "An den rechten Rand geschoben, in einer Spalte: Das ist `align-items`.",
+        "`justify-content: center;` und `align-items: flex-end;`"
+      ],
+      "recap": "Ändere die Richtung und die beiden Achsen tauschen: Frag dich immer „entlang der Linie oder quer dazu?“."
+    },
+    "mind-the-gap": {
+      "title": "Achte auf die Lücke",
+      "intro": [
+        "`gap` an einem Flex-Container fügt zwischen je zwei Steinen den gleichen Platz ein, aber nicht vor dem ersten oder nach dem letzten.",
+        "Das ist einfacher, als jedem Stein Abstände zu geben, und die Steine bleiben zentriert."
+      ],
+      "goal": "Lass 2 Noppen Platz zwischen den vier zentrierten Steinen.",
+      "hints": [
+        "`gap` gehört an den Container, `.baseplate`.",
+        "2 Noppen = 40px. Füge `gap: 40px;` hinzu."
+      ],
+      "recap": "`gap` verteilt Steine gleichmäßig, ohne ihre Abstände anzufassen."
+    },
+    "pyramid": {
+      "title": "Pyramide",
+      "intro": [
+        "Zeit, alles zu kombinieren, was du über Flex weißt: Richtung, beide Ausrichtungen und gap.",
+        "Jeder Stein hat schon seine Größe und Farbe. Nur `.baseplate` braucht noch Arbeit."
+      ],
+      "goal": "Bau eine Pyramide unten auf der Platte, zentriert, mit 1 Noppe zwischen den Schichten.",
+      "hints": [
+        "Die Schichten sind gestapelt: Fang mit `flex-direction: column;` an.",
+        "In einer Spalte ist „unten“ `justify-content` und „von links nach rechts zentriert“ `align-items`.",
+        "`justify-content: flex-end;`, `align-items: center;` und `gap: 20px;`"
+      ],
+      "recap": "Richtung, Ausrichtung auf beiden Achsen und gap: Das ist der ganze Flex-Werkzeugkasten."
+    },
+    "add-a-brick": {
+      "title": "Füge einen Stein hinzu",
+      "intro": [
+        "Bisher war das HTML fest. In diesem Schritt schreibst du es selbst. Öffne den HTML-Tab: Jeder Stein ist ein Element, `<div class=\"brick\"></div>`.",
+        "Ein Element hat ein öffnendes Tag `<div>` und ein schließendes Tag `</div>`. Das Attribut `class` listet die Klassen auf, die das CSS ansprechen kann."
+      ],
+      "goal": "Füge nach dem gelben Stein einen blauen hinzu. Das CSS ist fertig.",
+      "hints": [
+        "Kopiere die Zeile des gelben Steins und füge sie darunter ein.",
+        "Ändere in der Klasse `yellow` in `blue`.",
+        "Füge `<div class=\"brick blue\"></div>` am Ende in einer neuen Zeile hinzu."
+      ],
+      "recap": "HTML sagt, was da ist, CSS sagt, wie es aussieht. Ein `<div>` = ein Stein."
+    },
+    "house": {
+      "title": "Bau ein Haus",
+      "intro": [
+        "Ein `<div>` kann andere Elemente enthalten. Das `.row`-Div enthält die Wände und die Tür und kann sie selbst aufreihen, aber erst, wenn du ihm `display: flex` gibst.",
+        "Die Platte stapelt das Dach und die Reihe. Die Reihe stellt ihre Steine nebeneinander. Jeder Container hat sein eigenes `flex-direction`, `justify-content`, `align-items` und `gap`.",
+        "Das ist der letzte Bau: Du brauchst alles aus den 19 Schritten davor."
+      ],
+      "goal": "Füge im HTML die zweite Wand hinzu und gestalte dann das Haus: ein rotes Dach auf weißen Wänden mit einer blauen Tür, zentriert auf der Platte.",
+      "hints": [
+        "Zuerst das HTML: Füge in `.row` nach der Tür `<div class=\"brick wall\"></div>` hinzu.",
+        "Steine: Dach `padding: 20px 80px;`, Wand `padding: 40px 20px;`, Tür `padding: 30px 20px;`, jeweils mit seiner Farbe.",
+        "`.baseplate`: `flex-direction: column;` mit `justify-content: center;` und `align-items: center;`",
+        "`.row`: `display: flex;`, `align-items: flex-end;` und `gap: 20px;`"
+      ],
+      "recap": "Container in Containern: So ist jede echte Webseite aufgebaut. Gut gebaut!"
+    }
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "app": {
+    "name": "Ladrillo a ladrillo"
+  },
+  "language": {
+    "label": "Idioma",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "bothSides": "10 + 10 = 20px de ancho y de alto",
+    "longSize": "20px de alto, 60px de ancho",
+    "standingSize": "60px de alto, 20px de ancho",
+    "largeOnly": "solo el ladrillo grande",
+    "square": "2 × 2 tetones, verde",
+    "long": "6 tetones de ancho, 2 tetones de alto, naranja",
+    "post": "1 tetón de ancho, 5 tetones de alto, morado",
+    "downRight": "40px hacia abajo, 20px hacia la derecha",
+    "alreadySet": "Ya definido",
+    "atBottom": "ladrillos abajo",
+    "verticalNow": "¡ahora en vertical!",
+    "houseBaseplate": "Apila el tejado y la fila, centrados en la placa",
+    "houseRow": "Paredes y puerta una al lado de otra, a 1 tetón, apoyadas abajo",
+    "roof": "8 tetones de ancho, 2 tetones de alto, rojo",
+    "wall": "2 tetones de ancho, 4 tetones de alto, blanco",
+    "door": "2 tetones de ancho, 3 tetones de alto, azul"
+  },
+  "steps": {
+    "label": "Pasos",
+    "step": "Paso {{number}}: {{title}}",
+    "stepDone": "Paso {{number}}: {{title}}, completado",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Paso {{step}} de {{total}}",
+    "goal": "Tu objetivo: ",
+    "firstHint": "¿Necesitas una pista?",
+    "nextHint": "Otra pista",
+    "hintCount": "{{current}} de {{total}}",
+    "showSolution": "Muéstrame la solución",
+    "confirmLabel": "¿Reemplazar tu código por la solución?",
+    "confirmText": "Tu código se reemplazará por la solución.",
+    "replaceCode": "Reemplazar mi código",
+    "keepTrying": "Sigo intentándolo"
+  },
+  "editor": {
+    "label": "Editor de código",
+    "files": "Archivo",
+    "tabs": {
+      "html": "index.html",
+      "css": "style.css"
+    },
+    "code": {
+      "html": "Código HTML",
+      "css": "Código CSS"
+    },
+    "startOver": "Empezar de nuevo",
+    "htmlEditable": "Este HTML va dentro de `<div class=\"baseplate\">`.",
+    "htmlFixed": "En este paso el HTML es fijo: cambia el aspecto en <strong>style.css</strong>."
+  },
+  "preview": {
+    "label": "Vista previa",
+    "address": "bricks://step-{{step}}/index.html",
+    "showTarget": "Mostrar el modelo",
+    "yourBuild": "Tu construcción",
+    "targetBuild": "Construcción modelo"
+  },
+  "check": {
+    "title": "Comprobación",
+    "count_one": "{{placed}} de {{count}} ladrillo en su sitio",
+    "count_other": "{{placed}} de {{count}} ladrillos en su sitio",
+    "inPlace": "en su sitio",
+    "unnamedBrick": "ladrillo {{number}}",
+    "solved": "¡Paso completado!",
+    "finished": "¡Has terminado todos los pasos!",
+    "nextStep": "Siguiente paso",
+    "issues": {
+      "tooWide": "{{distance}} demasiado ancho",
+      "tooNarrow": "{{distance}} demasiado estrecho",
+      "tooTall": "{{distance}} demasiado alto",
+      "tooShort": "{{distance}} demasiado bajo",
+      "tooFarRight": "{{distance}} demasiado a la derecha",
+      "tooFarLeft": "{{distance}} demasiado a la izquierda",
+      "tooLow": "{{distance}} demasiado abajo",
+      "tooHigh": "{{distance}} demasiado arriba",
+      "wrongColor": "debería ser {{color}}",
+      "stayUnpainted": "debería quedarse sin pintar",
+      "missing": "falta: añádelo en el HTML",
+      "extra": "no forma parte de esta construcción: quítalo"
+    },
+    "distance": {
+      "stud_one": "{{count}} tetón",
+      "stud_other": "{{count}} tetones",
+      "px": "{{count}}px"
+    },
+    "colors": {
+      "red": "rojo",
+      "yellow": "amarillo",
+      "blue": "azul",
+      "green": "verde",
+      "orange": "naranja",
+      "purple": "morado",
+      "white": "blanco",
+      "black": "negro"
+    },
+    "warnings": {
+      "unmatchedClosingBrace": "Línea {{line}}: hay una } sin su { correspondiente.",
+      "missingSemicolon": "Línea {{line}}: puede que falte un ; al final de la línea.",
+      "missingColon": "Línea {{line}}: escribe : entre la propiedad y su valor.",
+      "missingUnit": "Línea {{line}}: añade una unidad al número, como 20px.",
+      "unclosedBrace": "Una { nunca se cierra: añade una } al final de la regla."
+    }
+  },
+  "levels": {
+    "first-brick": {
+      "title": "Tu primer ladrillo",
+      "intro": [
+        "Cada ladrillo es un `<div>` vacío. Sin nada dentro, no tiene tamaño. `padding` añade espacio dentro del ladrillo, y ese espacio es lo que ves.",
+        "`padding: 10px` añade 10px por cada lado, así que el ladrillo mide 20px × 20px: exactamente un tetón."
+      ],
+      "goal": "Haz que el ladrillo mida 2 tetones de ancho y 2 tetones de alto (40px × 40px).",
+      "hints": [
+        "El padding se suma por los dos lados: izquierda + derecha da el ancho, arriba + abajo da el alto.",
+        "Necesitas 40px en total, así que cada lado lleva la mitad.",
+        "Cambia el valor a `padding: 20px;`"
+      ],
+      "recap": "`padding` hace crecer un ladrillo desde dentro. La mitad del tamaño que quieres va a cada lado."
+    },
+    "long-brick": {
+      "title": "Un ladrillo largo",
+      "intro": [
+        "`padding` acepta dos valores: el primero para arriba y abajo, el segundo para izquierda y derecha.",
+        "Así se consiguen ladrillos largos en lugar de cuadrados."
+      ],
+      "goal": "Haz un ladrillo de 4 tetones de ancho y 2 tetones de alto (80px × 40px).",
+      "hints": [
+        "La altura sigue siendo 40px, así que arriba y abajo siguen con 20px cada uno.",
+        "El ancho debe ser 80px: 40px a la izquierda y 40px a la derecha.",
+        "Escribe `padding: 20px 40px;`"
+      ],
+      "recap": "Con dos valores, `padding: vertical horizontal;` te deja dar forma al ladrillo."
+    },
+    "standing-brick": {
+      "title": "Dale la vuelta",
+      "intro": [
+        "Intercambia los dos valores y el ladrillo gira: un primer valor grande lo hace alto, un segundo valor grande lo hace ancho."
+      ],
+      "goal": "Haz un ladrillo de 1 tetón de ancho y 4 tetones de alto (20px × 80px).",
+      "hints": [
+        "Alto significa un primer valor grande (arriba y abajo).",
+        "Alto 80px → 40px arriba y abajo. Ancho 20px → 10px a izquierda y derecha.",
+        "Escribe `padding: 40px 10px;`"
+      ],
+      "recap": "El primer valor controla el alto, el segundo el ancho."
+    },
+    "two-sizes": {
+      "title": "Dos ladrillos, dos tamaños",
+      "intro": [
+        "Un ladrillo puede tener varias clases. `class=\"brick small\"` significa que el ladrillo recibe las reglas de `.brick` y las de `.small`.",
+        "Las reglas de `.brick` se aplican a todos los ladrillos. Las de `.small` o `.large` solo se aplican a ese ladrillo, y ganan a `.brick` porque aparecen más tarde en el archivo."
+      ],
+      "goal": "Haz el ladrillo pequeño de 2 × 2 tetones y el grande de 6 tetones de ancho y 4 tetones de alto.",
+      "hints": [
+        "Escribe el padding dentro de `.small { }` y `.large { }`, no en `.brick`.",
+        "Pequeño: 40px × 40px. Grande: 120px de ancho, 80px de alto.",
+        "`.small { padding: 20px; }` y `.large { padding: 40px 60px; }`"
+      ],
+      "recap": "Las reglas comunes van en `.brick`; cada clase extra añade lo que es especial de un ladrillo."
+    },
+    "paint-it": {
+      "title": "Píntalo de rojo",
+      "intro": [
+        "Los ladrillos empiezan sin pintar. `background-color` pinta el interior del ladrillo, padding incluido.",
+        "CSS conoce nombres de colores como `red`, `yellow`, `blue`, `green`, `orange`, `purple`, `white` y `black`."
+      ],
+      "goal": "Pinta de rojo el ladrillo largo.",
+      "hints": [
+        "Añade una línea nueva dentro de `.brick { }`. Cada línea es `property: value;`",
+        "Escribe `background-color: red;` debajo del padding."
+      ],
+      "recap": "`background-color` pinta el ladrillo. No olvides el `;` al final de cada línea."
+    },
+    "three-colors": {
+      "title": "Tres colores",
+      "intro": [
+        "Los tres ladrillos comparten las reglas de `.brick`, así que tienen el mismo tamaño. Su segunda clase te deja pintar cada uno de forma distinta."
+      ],
+      "goal": "Pinta los ladrillos de rojo, amarillo y azul, de izquierda a derecha.",
+      "hints": [
+        "`.one` ya está hecho. Copia su línea en `.two` y `.three`.",
+        "Cambia el nombre del color: `yellow` para `.two`, `blue` para `.three`."
+      ],
+      "recap": "Una clase para lo que comparten los ladrillos, otra para lo que hace distinto a cada uno."
+    },
+    "brick-sorter": {
+      "title": "Clasificador de ladrillos",
+      "intro": [
+        "Ahora tamaño y color a la vez. Cada ladrillo necesita su propio `padding` y su propio `background-color`.",
+        "Mira los contornos discontinuos en la vista previa: muestran dónde debe acabar cada ladrillo y qué color necesita."
+      ],
+      "goal": "Un cuadrado verde de 2 × 2, un ladrillo naranja de 6 tetones de ancho y 2 de alto, y un poste morado de 1 tetón de ancho y 5 de alto.",
+      "hints": [
+        "Cada tetón mide 20px. Divide entre 2 el tamaño que quieres para obtener el padding de un lado.",
+        "Cuadrado: `padding: 20px;` Largo: `padding: 20px 60px;` Poste: `padding: 50px 10px;`",
+        "Después añade `background-color: green;`, `orange` y `purple`."
+      ],
+      "recap": "Tamaño con `padding`, color con `background-color`: ya puedes hacer cualquier ladrillo."
+    },
+    "move-right": {
+      "title": "Muévelo a la derecha",
+      "intro": [
+        "`padding` es espacio dentro del ladrillo. `margin` es espacio fuera: aleja el ladrillo de lo que tiene alrededor.",
+        "`margin-left: 40px` deja 40px vacíos a la izquierda del ladrillo, así que se mueve 2 tetones a la derecha."
+      ],
+      "goal": "Mueve el ladrillo rojo 6 tetones a la derecha.",
+      "hints": [
+        "Necesitas espacio vacío a la izquierda del ladrillo: `margin-left`.",
+        "6 tetones × 20px = 120px.",
+        "Añade `margin-left: 120px;`"
+      ],
+      "recap": "`margin` es espacio invisible fuera de un ladrillo. Lo mueve sin cambiar su tamaño."
+    },
+    "move-down": {
+      "title": "Abajo y al lado",
+      "intro": [
+        "`margin-top` empuja un ladrillo hacia abajo. Combínalo con `margin-left` para colocar un ladrillo en cualquier lugar de la placa.",
+        "También hay una forma corta con cuatro valores, en el sentido de las agujas del reloj empezando por arriba: `margin: top right bottom left;`"
+      ],
+      "goal": "Coloca el ladrillo a 10 tetones de la izquierda y a 4 tetones de arriba.",
+      "hints": [
+        "Dos márgenes: uno desde la izquierda y otro desde arriba.",
+        "10 tetones = 200px desde la izquierda, 4 tetones = 80px desde arriba.",
+        "`margin-left: 200px;` y `margin-top: 80px;` (o `margin: 80px 0 0 200px;`)"
+      ],
+      "recap": "`margin-top` y `margin-left` colocan un ladrillo en un punto exacto."
+    },
+    "staircase": {
+      "title": "Escalera",
+      "intro": [
+        "Los márgenes de un ladrillo también empujan a sus vecinos. `margin-right` en cada ladrillo deja un hueco después de cada uno.",
+        "Dale a cada escalón su propio `margin-top` para bajarlo más que el anterior."
+      ],
+      "goal": "Construye una escalera: un tetón entre los escalones, cada escalón 2 tetones más abajo que el anterior.",
+      "hints": [
+        "El espacio entre escalones es igual para todos: pon `margin-right: 20px;` en `.brick`.",
+        "El primer escalón se queda arriba. El segundo baja 2 tetones, el tercero 4.",
+        "`.two { margin-top: 40px; }` y `.three { margin-top: 80px; }`"
+      ],
+      "recap": "Un margen también empuja a los vecinos. El espacio común va en `.brick`, los desplazamientos especiales en cada escalón."
+    },
+    "center-stage": {
+      "title": "En el centro",
+      "intro": [
+        "Contar márgenes cansa. La placa es un contenedor flex (`display: flex`): coloca en fila los ladrillos que contiene, y puede situarlos por ti.",
+        "`justify-content` mueve los ladrillos a lo largo de la fila: `flex-start` (izquierda, por defecto), `center`, `flex-end` (derecha).",
+        "Esta regla va en el contenedor, `.baseplate`, no en los ladrillos."
+      ],
+      "goal": "Centra horizontalmente el ladrillo amarillo, sin usar margin.",
+      "hints": [
+        "Escribe la línea nueva dentro de `.baseplate { }`.",
+        "Añade `justify-content: center;`"
+      ],
+      "recap": "`justify-content` en el contenedor coloca todos sus ladrillos a lo largo de la fila."
+    },
+    "push-right": {
+      "title": "Empuja hasta el final",
+      "intro": [
+        "`justify-content: flex-end` empuja todos los ladrillos al final de la fila, manteniendo su orden."
+      ],
+      "goal": "Mueve los tres ladrillos al borde derecho de la placa.",
+      "hints": [
+        "El final de una fila es su lado derecho.",
+        "Añade `justify-content: flex-end;` a `.baseplate`."
+      ],
+      "recap": "`flex-end` agrupa los ladrillos al final de la fila."
+    },
+    "spread-out": {
+      "title": "Repártelos",
+      "intro": [
+        "`justify-content: space-between` pone el primer ladrillo al principio, el último al final, y reparte el espacio libre a partes iguales entre ellos.",
+        "Otras opciones: `space-around` y `space-evenly` también dejan espacio en los bordes."
+      ],
+      "goal": "Reparte los cuatro ladrillos por todo el ancho de la placa.",
+      "hints": [
+        "El primer ladrillo toca el borde izquierdo, el último el derecho.",
+        "Usa `justify-content: space-between;`"
+      ],
+      "recap": "`space-between` reparte los ladrillos con el mismo espacio entre ellos."
+    },
+    "dead-center": {
+      "title": "Justo en el centro",
+      "intro": [
+        "`justify-content` actúa a lo largo de la fila (horizontal). `align-items` actúa de través (vertical): `flex-start` (arriba), `center`, `flex-end` (abajo).",
+        "Juntos pueden poner un ladrillo justo en el centro de la placa."
+      ],
+      "goal": "Pon el ladrillo exactamente en el centro de la placa.",
+      "hints": [
+        "Ya está centrado de izquierda a derecha. Ahora céntralo de arriba abajo.",
+        "Añade `align-items: center;` a `.baseplate`."
+      ],
+      "recap": "En una fila: `justify-content` es horizontal, `align-items` es vertical."
+    },
+    "traffic-light": {
+      "title": "Semáforo",
+      "intro": [
+        "`flex-direction` elige cómo se alinean los ladrillos: `row` (uno al lado de otro, por defecto) o `column` (apilados de arriba abajo)."
+      ],
+      "goal": "Apila los ladrillos como un semáforo: rojo arriba, luego amarillo y luego verde.",
+      "hints": [
+        "Los ladrillos están en fila. Quieres una columna.",
+        "Añade `flex-direction: column;` a `.baseplate`."
+      ],
+      "recap": "`flex-direction: column` apila los ladrillos de arriba abajo."
+    },
+    "axis-swap": {
+      "title": "Los ejes se intercambian",
+      "intro": [
+        "En una columna, las dos propiedades cambian de papel: `justify-content` mueve ahora los ladrillos arriba y abajo, y `align-items` a izquierda y derecha.",
+        "Regla práctica: `justify-content` sigue la dirección de la línea, `align-items` va de través."
+      ],
+      "goal": "Mueve el semáforo al borde derecho, centrado de arriba abajo.",
+      "hints": [
+        "Centrado de arriba abajo, en una columna: eso es `justify-content`.",
+        "Pegado al borde derecho, en una columna: eso es `align-items`.",
+        "`justify-content: center;` y `align-items: flex-end;`"
+      ],
+      "recap": "Cambia la dirección y los dos ejes se intercambian: pregúntate siempre «¿a lo largo de la línea o de través?»."
+    },
+    "mind-the-gap": {
+      "title": "Cuidado con el hueco",
+      "intro": [
+        "`gap` en un contenedor flex añade el mismo espacio entre cada par de ladrillos, pero no antes del primero ni después del último.",
+        "Es más sencillo que añadir márgenes a cada ladrillo, y los ladrillos siguen centrados."
+      ],
+      "goal": "Deja 2 tetones entre los cuatro ladrillos centrados.",
+      "hints": [
+        "`gap` va en el contenedor, `.baseplate`.",
+        "2 tetones = 40px. Añade `gap: 40px;`"
+      ],
+      "recap": "`gap` separa los ladrillos por igual sin tocar sus márgenes."
+    },
+    "pyramid": {
+      "title": "Pirámide",
+      "intro": [
+        "Es hora de combinar todo lo que sabes de flex: dirección, las dos alineaciones y gap.",
+        "Cada ladrillo ya tiene su tamaño y su color. Solo hay que trabajar `.baseplate`."
+      ],
+      "goal": "Construye una pirámide abajo en la placa, centrada, con 1 tetón entre los pisos.",
+      "hints": [
+        "Los pisos están apilados: empieza con `flex-direction: column;`",
+        "En una columna, «abajo» es `justify-content` y «centrado de izquierda a derecha» es `align-items`.",
+        "`justify-content: flex-end;`, `align-items: center;` y `gap: 20px;`"
+      ],
+      "recap": "Dirección, alineación en los dos ejes y gap: esa es toda la caja de herramientas de flex."
+    },
+    "add-a-brick": {
+      "title": "Añade un ladrillo",
+      "intro": [
+        "Hasta ahora el HTML era fijo. En este paso lo escribes tú. Abre la pestaña HTML: cada ladrillo es un elemento, `<div class=\"brick\"></div>`.",
+        "Un elemento tiene una etiqueta de apertura `<div>` y una de cierre `</div>`. El atributo `class` lista las clases a las que puede apuntar el CSS."
+      ],
+      "goal": "Añade un ladrillo azul después del amarillo. El CSS está listo.",
+      "hints": [
+        "Copia la línea del ladrillo amarillo y pégala debajo.",
+        "Cambia `yellow` por `blue` en la clase.",
+        "Añade `<div class=\"brick blue\"></div>` en una línea nueva al final."
+      ],
+      "recap": "El HTML dice qué hay, el CSS dice cómo se ve. Un `<div>` = un ladrillo."
+    },
+    "house": {
+      "title": "Construye una casa",
+      "intro": [
+        "Un `<div>` puede contener otros elementos. El div `.row` contiene las paredes y la puerta, y puede alinearlas por sí mismo, pero solo cuando le das `display: flex`.",
+        "La placa apila el tejado y la fila. La fila pone sus ladrillos uno al lado de otro. Cada contenedor tiene sus propios `flex-direction`, `justify-content`, `align-items` y `gap`.",
+        "Esta es la construcción final: necesitas todo lo de los 19 pasos anteriores."
+      ],
+      "goal": "Añade la segunda pared en el HTML y después da estilo a la casa: un tejado rojo sobre paredes blancas con una puerta azul, centrada en la placa.",
+      "hints": [
+        "Primero el HTML: dentro de `.row`, añade `<div class=\"brick wall\"></div>` después de la puerta.",
+        "Ladrillos: tejado `padding: 20px 80px;`, pared `padding: 40px 20px;`, puerta `padding: 30px 20px;`, cada uno con su color.",
+        "`.baseplate`: `flex-direction: column;` con `justify-content: center;` y `align-items: center;`",
+        "`.row`: `display: flex;`, `align-items: flex-end;` y `gap: 20px;`"
+      ],
+      "recap": "Contenedores dentro de contenedores: así se maqueta cualquier página web real. ¡Bien construido!"
+    }
+  }
+}
