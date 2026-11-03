@@ -1,0 +1,13 @@
+.preview-frame {
+  display: block;
+  border: 0;
+}
+
+.probe-frame {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  visibility: hidden;
+  pointer-events: none;
+  border: 0;
+}

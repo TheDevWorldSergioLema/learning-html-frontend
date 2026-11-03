@@ -1,0 +1,364 @@
+{
+  "app": {
+    "name": "Brick by Brick"
+  },
+  "steps": {
+    "label": "Steps",
+    "step": "Step {{number}}: {{title}}",
+    "stepDone": "Step {{number}}: {{title}}, done",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Step {{step}} of {{total}}",
+    "goal": "Your goal: ",
+    "firstHint": "Need a hint?",
+    "nextHint": "Another hint",
+    "hintCount": "{{current}} of {{total}}",
+    "showSolution": "Show me the solution",
+    "confirmLabel": "Replace your code with the solution?",
+    "confirmText": "This replaces your code with the solution.",
+    "replaceCode": "Replace my code",
+    "keepTrying": "Keep trying"
+  },
+  "editor": {
+    "label": "Code editor",
+    "files": "File",
+    "tabs": {
+      "html": "index.html",
+      "css": "style.css"
+    },
+    "code": {
+      "html": "HTML code",
+      "css": "CSS code"
+    },
+    "startOver": "Start over",
+    "htmlEditable": "This HTML goes inside `<div class=\"baseplate\">`.",
+    "htmlFixed": "The HTML is fixed in this step: change the look in <strong>style.css</strong>."
+  },
+  "preview": {
+    "label": "Preview",
+    "address": "bricks://step-{{step}}/index.html",
+    "showTarget": "Show target",
+    "yourBuild": "Your build",
+    "targetBuild": "Target build"
+  },
+  "check": {
+    "title": "Build check",
+    "count_one": "{{placed}} of {{count}} brick in place",
+    "count_other": "{{placed}} of {{count}} bricks in place",
+    "inPlace": "in place",
+    "unnamedBrick": "brick {{number}}",
+    "solved": "Step complete!",
+    "finished": "You finished every step!",
+    "nextStep": "Next step",
+    "issues": {
+      "tooWide": "{{distance}} too wide",
+      "tooNarrow": "{{distance}} too narrow",
+      "tooTall": "{{distance}} too tall",
+      "tooShort": "{{distance}} too short",
+      "tooFarRight": "{{distance}} too far right",
+      "tooFarLeft": "{{distance}} too far left",
+      "tooLow": "{{distance}} too low",
+      "tooHigh": "{{distance}} too high",
+      "wrongColor": "should be {{color}}",
+      "stayUnpainted": "should stay unpainted",
+      "missing": "is missing: add it in the HTML",
+      "extra": "is not part of this build: remove it"
+    },
+    "distance": {
+      "stud_one": "{{count}} stud",
+      "stud_other": "{{count}} studs",
+      "px": "{{count}}px"
+    },
+    "colors": {
+      "red": "red",
+      "yellow": "yellow",
+      "blue": "blue",
+      "green": "green",
+      "orange": "orange",
+      "purple": "purple",
+      "white": "white",
+      "black": "black"
+    },
+    "warnings": {
+      "unmatchedClosingBrace": "Line {{line}}: there is a } without a matching {.",
+      "missingSemicolon": "Line {{line}}: the line may be missing a ; at the end.",
+      "missingColon": "Line {{line}}: write a : between the property and its value.",
+      "missingUnit": "Line {{line}}: add a unit to the number, like 20px.",
+      "unclosedBrace": "A { is never closed: add a } at the end of the rule."
+    }
+  },
+  "levels": {
+    "first-brick": {
+      "title": "Your first brick",
+      "intro": [
+        "Every brick is an empty `<div>`. With nothing inside, it has no size at all. `padding` adds space inside the brick, and that space is what you see.",
+        "`padding: 10px` adds 10px on every side, so the brick becomes 20px × 20px: exactly one stud."
+      ],
+      "goal": "Make the brick 2 studs wide and 2 studs tall (40px × 40px).",
+      "hints": [
+        "Padding is added on both sides: left + right gives the width, top + bottom gives the height.",
+        "You need 40px in total, so each side needs half of that.",
+        "Change the value to `padding: 20px;`"
+      ],
+      "recap": "`padding` grows a brick from the inside. Half the size you want goes on each side."
+    },
+    "long-brick": {
+      "title": "A long brick",
+      "intro": [
+        "`padding` can take two values: the first one is for top and bottom, the second one is for left and right.",
+        "That is how you get long bricks instead of squares."
+      ],
+      "goal": "Make a brick 4 studs wide and 2 studs tall (80px × 40px).",
+      "hints": [
+        "The height stays 40px, so top and bottom stay at 20px each.",
+        "The width must be 80px: that is 40px on the left and 40px on the right.",
+        "Write `padding: 20px 40px;`"
+      ],
+      "recap": "With two values, `padding: vertical horizontal;` lets you shape the brick."
+    },
+    "standing-brick": {
+      "title": "Turn it around",
+      "intro": [
+        "Swap the two values and the brick turns around: a big first value makes it tall, a big second value makes it wide."
+      ],
+      "goal": "Make a brick 1 stud wide and 4 studs tall (20px × 80px).",
+      "hints": [
+        "Tall means a big first value (top and bottom).",
+        "Height 80px → 40px top and bottom. Width 20px → 10px left and right.",
+        "Write `padding: 40px 10px;`"
+      ],
+      "recap": "The first value controls the height, the second one the width."
+    },
+    "two-sizes": {
+      "title": "Two bricks, two sizes",
+      "intro": [
+        "A brick can have several classes. `class=\"brick small\"` means the brick gets the rules of `.brick` and the rules of `.small`.",
+        "Rules in `.brick` apply to every brick. Rules in `.small` or `.large` only apply to that brick, and they win over `.brick` because they come later in the file."
+      ],
+      "goal": "Make the small brick 2 × 2 studs and the large brick 6 studs wide and 4 studs tall.",
+      "hints": [
+        "Write the padding inside `.small { }` and `.large { }`, not in `.brick`.",
+        "Small: 40px × 40px. Large: 120px wide, 80px tall.",
+        "`.small { padding: 20px; }` and `.large { padding: 40px 60px; }`"
+      ],
+      "recap": "Shared rules go on `.brick`; each extra class adds what is special about one brick."
+    },
+    "paint-it": {
+      "title": "Paint it red",
+      "intro": [
+        "Bricks start out unpainted. `background-color` paints the inside of the brick, padding included.",
+        "CSS knows color names like `red`, `yellow`, `blue`, `green`, `orange`, `purple`, `white` and `black`."
+      ],
+      "goal": "Paint the long brick red.",
+      "hints": [
+        "Add a new line inside `.brick { }`. Every line is `property: value;`",
+        "Write `background-color: red;` under the padding."
+      ],
+      "recap": "`background-color` paints the brick. Don't forget the `;` at the end of each line."
+    },
+    "three-colors": {
+      "title": "Three colors",
+      "intro": [
+        "All three bricks share the `.brick` rules, so they have the same size. Their second class lets you paint each one differently."
+      ],
+      "goal": "Paint the bricks red, yellow and blue, from left to right.",
+      "hints": [
+        "`.one` is already done. Copy its line into `.two` and `.three`.",
+        "Change the color name: `yellow` for `.two`, `blue` for `.three`."
+      ],
+      "recap": "One class for what bricks share, one class for what makes each brick different."
+    },
+    "brick-sorter": {
+      "title": "Brick sorter",
+      "intro": [
+        "Now size and color together. Each brick needs its own `padding` and its own `background-color`.",
+        "Look at the dashed outlines in the preview: they show where each brick must end up and which color it needs."
+      ],
+      "goal": "A green 2 × 2 square, an orange brick 6 studs wide and 2 tall, and a purple post 1 stud wide and 5 tall.",
+      "hints": [
+        "Each stud is 20px. Divide the size you want by 2 to get the padding of one side.",
+        "Square: `padding: 20px;` Long: `padding: 20px 60px;` Post: `padding: 50px 10px;`",
+        "Then add `background-color: green;`, `orange` and `purple`."
+      ],
+      "recap": "Size with `padding`, color with `background-color`: you can now make any brick."
+    },
+    "move-right": {
+      "title": "Move it right",
+      "intro": [
+        "`padding` is space inside the brick. `margin` is space outside it: it pushes the brick away from what is around it.",
+        "`margin-left: 40px` leaves 40px empty on the left of the brick, so it moves 2 studs to the right."
+      ],
+      "goal": "Move the red brick 6 studs to the right.",
+      "hints": [
+        "You need empty space on the left of the brick: `margin-left`.",
+        "6 studs × 20px = 120px.",
+        "Add `margin-left: 120px;`"
+      ],
+      "recap": "`margin` is invisible space outside a brick. It moves the brick without changing its size."
+    },
+    "move-down": {
+      "title": "Down and across",
+      "intro": [
+        "`margin-top` pushes a brick down. Combine it with `margin-left` to place a brick anywhere on the baseplate.",
+        "There is also a short form with four values, clockwise from the top: `margin: top right bottom left;`"
+      ],
+      "goal": "Place the brick 10 studs from the left and 4 studs from the top.",
+      "hints": [
+        "Two margins: one from the left, one from the top.",
+        "10 studs = 200px from the left, 4 studs = 80px from the top.",
+        "`margin-left: 200px;` and `margin-top: 80px;` (or `margin: 80px 0 0 200px;`)"
+      ],
+      "recap": "`margin-top` and `margin-left` place a brick at an exact spot."
+    },
+    "staircase": {
+      "title": "Staircase",
+      "intro": [
+        "Margins of one brick also push its neighbours. `margin-right` on every brick leaves a gap after each one.",
+        "Give each step its own `margin-top` to move it lower than the one before."
+      ],
+      "goal": "Build a staircase: one stud between the steps, each step 2 studs lower than the previous one.",
+      "hints": [
+        "The space between steps is the same for all of them: put `margin-right: 20px;` in `.brick`.",
+        "The first step stays at the top. The second goes 2 studs down, the third 4 studs down.",
+        "`.two { margin-top: 40px; }` and `.three { margin-top: 80px; }`"
+      ],
+      "recap": "A margin pushes neighbours too. Shared spacing goes on `.brick`, special offsets on each step."
+    },
+    "center-stage": {
+      "title": "Center stage",
+      "intro": [
+        "Counting margins gets tiring. The baseplate is a flex container (`display: flex`): it lines up the bricks inside it in a row, and it can place them for you.",
+        "`justify-content` moves the bricks along the row: `flex-start` (left, the default), `center`, `flex-end` (right).",
+        "This rule goes on the container, `.baseplate`, not on the bricks."
+      ],
+      "goal": "Center the yellow brick horizontally, without using margin.",
+      "hints": [
+        "Write the new line inside `.baseplate { }`.",
+        "Add `justify-content: center;`"
+      ],
+      "recap": "`justify-content` on the container places all its bricks along the row."
+    },
+    "push-right": {
+      "title": "Push to the end",
+      "intro": [
+        "`justify-content: flex-end` pushes all the bricks to the end of the row, keeping their order."
+      ],
+      "goal": "Move the three bricks to the right edge of the baseplate.",
+      "hints": [
+        "The end of a row is its right side.",
+        "Add `justify-content: flex-end;` to `.baseplate`."
+      ],
+      "recap": "`flex-end` packs the bricks at the end of the row."
+    },
+    "spread-out": {
+      "title": "Spread out",
+      "intro": [
+        "`justify-content: space-between` puts the first brick at the start, the last one at the end, and shares the free space equally between them.",
+        "Other options: `space-around` and `space-evenly` also put space at the edges."
+      ],
+      "goal": "Spread the four bricks across the full width of the baseplate.",
+      "hints": [
+        "The first brick touches the left edge, the last one the right edge.",
+        "Use `justify-content: space-between;`"
+      ],
+      "recap": "`space-between` spreads bricks with equal space between them."
+    },
+    "dead-center": {
+      "title": "Dead center",
+      "intro": [
+        "`justify-content` works along the row (horizontal). `align-items` works across it (vertical): `flex-start` (top), `center`, `flex-end` (bottom).",
+        "Together they can put a brick right in the middle of the baseplate."
+      ],
+      "goal": "Put the brick in the exact center of the baseplate.",
+      "hints": [
+        "It is already centered from left to right. Now center it from top to bottom.",
+        "Add `align-items: center;` to `.baseplate`."
+      ],
+      "recap": "In a row: `justify-content` is horizontal, `align-items` is vertical."
+    },
+    "traffic-light": {
+      "title": "Traffic light",
+      "intro": [
+        "`flex-direction` chooses how bricks line up: `row` (side by side, the default) or `column` (stacked from top to bottom)."
+      ],
+      "goal": "Stack the bricks into a traffic light: red on top, then yellow, then green.",
+      "hints": [
+        "The bricks are in a row. You want a column.",
+        "Add `flex-direction: column;` to `.baseplate`."
+      ],
+      "recap": "`flex-direction: column` stacks bricks from top to bottom."
+    },
+    "axis-swap": {
+      "title": "The axes swap",
+      "intro": [
+        "In a column, the two properties swap roles: `justify-content` now moves bricks up and down, and `align-items` moves them left and right.",
+        "Rule of thumb: `justify-content` follows the direction of the line, `align-items` goes across it."
+      ],
+      "goal": "Move the traffic light to the right edge, centered from top to bottom.",
+      "hints": [
+        "Centered from top to bottom, in a column: that is `justify-content`.",
+        "Pushed to the right edge, in a column: that is `align-items`.",
+        "`justify-content: center;` and `align-items: flex-end;`"
+      ],
+      "recap": "Change the direction and the two axes swap: always ask \"along the line or across it?\"."
+    },
+    "mind-the-gap": {
+      "title": "Mind the gap",
+      "intro": [
+        "`gap` on a flex container adds the same space between every pair of bricks, but not before the first one or after the last one.",
+        "It is simpler than adding margins to each brick, and the bricks stay centered."
+      ],
+      "goal": "Leave 2 studs between the four centered bricks.",
+      "hints": [
+        "`gap` goes on the container, `.baseplate`.",
+        "2 studs = 40px. Add `gap: 40px;`"
+      ],
+      "recap": "`gap` spaces bricks evenly without touching their margins."
+    },
+    "pyramid": {
+      "title": "Pyramid",
+      "intro": [
+        "Time to combine everything you know about flex: direction, both alignments and gap.",
+        "Each brick already has its size and color. Only `.baseplate` needs work."
+      ],
+      "goal": "Build a pyramid at the bottom of the baseplate, centered, with 1 stud between the layers.",
+      "hints": [
+        "The layers are stacked: start with `flex-direction: column;`",
+        "In a column, \"at the bottom\" is `justify-content` and \"centered left to right\" is `align-items`.",
+        "`justify-content: flex-end;`, `align-items: center;` and `gap: 20px;`"
+      ],
+      "recap": "Direction, alignment on both axes and gap: that is the whole flex toolbox."
+    },
+    "add-a-brick": {
+      "title": "Add a brick",
+      "intro": [
+        "Until now the HTML was fixed. In this step you write it. Open the HTML tab: each brick is one element, `<div class=\"brick\"></div>`.",
+        "An element has an opening tag `<div>` and a closing tag `</div>`. The `class` attribute lists the classes the CSS can target."
+      ],
+      "goal": "Add a blue brick after the yellow one. The CSS is ready.",
+      "hints": [
+        "Copy the yellow brick's line and paste it below.",
+        "Change `yellow` to `blue` in the class.",
+        "Add `<div class=\"brick blue\"></div>` on a new line at the end."
+      ],
+      "recap": "HTML says what is there, CSS says how it looks. One `<div>` = one brick."
+    },
+    "house": {
+      "title": "Build a house",
+      "intro": [
+        "A `<div>` can hold other elements. The `.row` div holds the walls and the door, and it can line them up on its own, but only once you give it `display: flex`.",
+        "The baseplate stacks the roof and the row. The row puts its bricks side by side. Every container has its own `flex-direction`, `justify-content`, `align-items` and `gap`.",
+        "This is the final build: you need everything from the previous 19 steps."
+      ],
+      "goal": "Add the second wall in the HTML, then style the house: a red roof on top of white walls with a blue door, centered on the baseplate.",
+      "hints": [
+        "HTML first: inside `.row`, add `<div class=\"brick wall\"></div>` after the door.",
+        "Bricks: roof `padding: 20px 80px;`, wall `padding: 40px 20px;`, door `padding: 30px 20px;`, each with its color.",
+        "`.baseplate`: `flex-direction: column;` with `justify-content: center;` and `align-items: center;`",
+        "`.row`: `display: flex;`, `align-items: flex-end;` and `gap: 20px;`"
+      ],
+      "recap": "Containers inside containers: that is how every real web page is laid out. Well built!"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+$track-width: 34px;
+$track-height: 20px;
+$knob: 14px;
+$knob-inset: 3px;
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-4;
+  font-size: $font-size-sm;
+  white-space: nowrap;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+}
+
+.toggle-track {
+  position: relative;
+  width: $track-width;
+  height: $track-height;
+  border-radius: $radius-pill;
+  background: $color-ink-faint;
+  transition: background $transition-fast;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $knob-inset;
+    left: $knob-inset;
+    width: $knob;
+    height: $knob;
+    border-radius: 50%;
+    background: $color-white;
+    transition: transform $transition-fast;
+  }
+}
+
+.toggle input:checked + .toggle-track {
+  background: $color-blue;
+
+  &::after {
+    transform: translateX($track-width - $knob - 2 * $knob-inset);
+  }
+}
+
+.toggle input:focus-visible + .toggle-track {
+  @include focus-ring;
+}
