@@ -1,16 +1,48 @@
-# React + Vite
+# Brick by Brick
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A browser-only playground where students learn HTML and CSS by placing toy bricks on a baseplate.
+The code editor is on the left, a browser-like preview on the right. Each of the 20 steps explains
+one idea, shows dashed outlines where the bricks must go, checks the build live and offers hints.
 
-Currently, two official plugins are available:
+| Steps | Concept | What it does to a brick |
+| --- | --- | --- |
+| 1–4 | `padding` | its size (an empty `<div>` is as big as its padding) |
+| 5–7 | `background-color` | its color |
+| 8–10 | `margin` | its position (space pushed around it) |
+| 11–16 | `display: flex`, `justify-content`, `align-items`, `flex-direction` | rows and columns of bricks |
+| 17–18 | `gap` | even space between bricks |
+| 19–20 | HTML | adding bricks and nesting containers |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+There is no backend: progress, code and hints are saved in the browser's `localStorage`.
 
-## React Compiler
+## Run it
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm install
+npm run dev      # http://localhost:5173
+npm test         # unit tests (vitest)
+npm run lint
+npm run build    # static files in dist/
+```
 
-## Expanding the ESLint configuration
+## How a step is checked
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1 stud = 20px; the baseplate is 400 × 280px.
+
+- The student's code is written into a sandboxed iframe (no scripts) without reloading it
+  (`src/lib/frame.js`).
+- The step's solution is rendered in a hidden iframe the same way. The size, position and color of
+  each `.brick` in it become the target: the dashed outlines and the reference for the check.
+- `src/lib/compare.js` compares the bricks one by one, in HTML order, with a 1px tolerance, and turns
+  each difference into a sentence ("2 studs too far left", "should be blue").
+- `src/lib/cssLint.js` points out the usual reasons why nothing happens: a missing `;`, `:` or unit,
+  or an unclosed `{`.
+
+Because the target comes from the solution, any CSS that produces the same build passes.
+
+## Adding or changing a step
+
+Steps live in `src/levels/levels.js`. Each one has the starter `html`/`css`, a `solutionCss`
+and/or `solutionHtml`, the explanation (`intro`, `example`, `goal`), progressive `hints` and a
+`recap` shown on success. Text fields accept `` `inline code` ``. Set `htmlEditable: true` when the
+student must write HTML.
