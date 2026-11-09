@@ -46,7 +46,8 @@
     "confirmLabel": "Sostituire il tuo codice con la soluzione?",
     "confirmText": "Il tuo codice verrà sostituito dalla soluzione.",
     "replaceCode": "Sostituisci il mio codice",
-    "keepTrying": "Continuo a provare"
+    "keepTrying": "Continuo a provare",
+    "definition": "Definizione"
   },
   "editor": {
     "label": "Editor di codice",
@@ -115,6 +116,16 @@
       "missingUnit": "Riga {{line}}: aggiungi un'unità al numero, come 20px.",
       "unclosedBrace": "Una { non viene mai chiusa: aggiungi una } alla fine della regola."
     }
+  },
+  "concepts": {
+    "padding": "Lo spazio dentro un elemento, tra il suo bordo e il suo contenuto. Un valore vale per tutti e quattro i lati; con due valori, il primo è per sopra e sotto, il secondo per sinistra e destra.",
+    "background-color": "Il colore dipinto dietro il contenuto di un elemento, padding compreso. Accetta il nome di un colore.",
+    "margin": "Lo spazio fuori da un elemento: lo allontana dai vicini e dal bordo del suo contenitore. `margin-top`, `margin-right`, `margin-bottom` e `margin-left` regolano ciascuno un lato.",
+    "justify-content": "Su un contenitore flex, posiziona gli elementi lungo l'asse principale (una riga di default). Valori: `flex-start`, `center`, `flex-end`, `space-between`, `space-around`.",
+    "align-items": "Su un contenitore flex, posiziona gli elementi trasversalmente all'asse principale (in verticale in una riga). Valori: `flex-start`, `center`, `flex-end`, `stretch`.",
+    "flex-direction": "Definisce l'asse principale di un contenitore flex: `row` (di default, da sinistra a destra) o `column` (dall'alto in basso). `justify-content` segue l'asse principale, `align-items` l'altro.",
+    "gap": "Su un contenitore flex, aggiunge lo stesso spazio tra due elementi vicini, mai prima del primo né dopo l'ultimo.",
+    "HTML": "Un elemento si scrive con un tag di apertura e uno di chiusura: `<div class=\"…\"></div>`. Gli elementi scritti tra i tag di un altro elemento sono i suoi figli: il CSS del genitore li dispone."
   },
   "levels": {
     "first-brick": {
@@ -270,7 +281,7 @@
     "push-right": {
       "title": "Spingili in fondo",
       "intro": [
-        "`justify-content: flex-end` spinge tutti i mattoncini in fondo alla fila, mantenendo il loro ordine."
+        "Ora tutti i mattoncini devono andare alla fine della riga, nello stesso ordine. Uno dei valori di `justify-content` della definizione fa proprio questo."
       ],
       "goal": "Sposta i tre mattoncini contro il bordo destro della piastra.",
       "hints": [
@@ -282,8 +293,8 @@
     "spread-out": {
       "title": "Distribuiscili",
       "intro": [
-        "`justify-content: space-between` mette il primo mattoncino all'inizio, l'ultimo alla fine, e divide in parti uguali lo spazio libero tra loro.",
-        "Altre opzioni: `space-around` e `space-evenly` lasciano spazio anche ai bordi."
+        "Questa volta il primo mattoncino va all'inizio, l'ultimo alla fine, e lo spazio libero è diviso in parti uguali tra i mattoncini.",
+        "Scegli il valore giusto di `justify-content`: `space-around` e `space-evenly` si somigliano, ma mettono spazio anche ai bordi."
       ],
       "goal": "Distribuisci i quattro mattoncini su tutta la larghezza della piastra.",
       "hints": [

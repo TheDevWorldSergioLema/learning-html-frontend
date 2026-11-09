@@ -46,7 +46,8 @@
     "confirmLabel": "¿Reemplazar tu código por la solución?",
     "confirmText": "Tu código se reemplazará por la solución.",
     "replaceCode": "Reemplazar mi código",
-    "keepTrying": "Sigo intentándolo"
+    "keepTrying": "Sigo intentándolo",
+    "definition": "Definición"
   },
   "editor": {
     "label": "Editor de código",
@@ -115,6 +116,16 @@
       "missingUnit": "Línea {{line}}: añade una unidad al número, como 20px.",
       "unclosedBrace": "Una { nunca se cierra: añade una } al final de la regla."
     }
+  },
+  "concepts": {
+    "padding": "El espacio dentro de un elemento, entre su borde y su contenido. Un valor se aplica a los cuatro lados; con dos valores, el primero es para arriba y abajo, el segundo para izquierda y derecha.",
+    "background-color": "El color pintado detrás del contenido de un elemento, padding incluido. Recibe un nombre de color.",
+    "margin": "El espacio fuera de un elemento: lo aleja de sus vecinos y del borde de su contenedor. `margin-top`, `margin-right`, `margin-bottom` y `margin-left` ajustan cada uno un lado.",
+    "justify-content": "En un contenedor flex, coloca los elementos a lo largo del eje principal (una fila por defecto). Valores: `flex-start`, `center`, `flex-end`, `space-between`, `space-around`.",
+    "align-items": "En un contenedor flex, coloca los elementos a lo ancho del eje principal (en vertical en una fila). Valores: `flex-start`, `center`, `flex-end`, `stretch`.",
+    "flex-direction": "Define el eje principal de un contenedor flex: `row` (por defecto, de izquierda a derecha) o `column` (de arriba abajo). `justify-content` sigue el eje principal, `align-items` el otro.",
+    "gap": "En un contenedor flex, añade el mismo espacio entre cada dos elementos vecinos, nunca antes del primero ni después del último.",
+    "HTML": "Un elemento se escribe con una etiqueta de apertura y una de cierre: `<div class=\"…\"></div>`. Los elementos escritos entre las etiquetas de otro elemento son sus hijos: el CSS del padre los coloca."
   },
   "levels": {
     "first-brick": {
@@ -270,7 +281,7 @@
     "push-right": {
       "title": "Empuja hasta el final",
       "intro": [
-        "`justify-content: flex-end` empuja todos los ladrillos al final de la fila, manteniendo su orden."
+        "Ahora todos los ladrillos deben ir al final de la fila, en el mismo orden. Uno de los valores de `justify-content` de la definición hace justo eso."
       ],
       "goal": "Mueve los tres ladrillos al borde derecho de la placa.",
       "hints": [
@@ -282,8 +293,8 @@
     "spread-out": {
       "title": "Repártelos",
       "intro": [
-        "`justify-content: space-between` pone el primer ladrillo al principio, el último al final, y reparte el espacio libre a partes iguales entre ellos.",
-        "Otras opciones: `space-around` y `space-evenly` también dejan espacio en los bordes."
+        "Esta vez el primer ladrillo va al principio, el último al final, y el espacio libre se reparte por igual entre los ladrillos.",
+        "Elige el valor correcto de `justify-content`: `space-around` y `space-evenly` se parecen, pero también ponen espacio en los bordes."
       ],
       "goal": "Reparte los cuatro ladrillos por todo el ancho de la placa.",
       "hints": [

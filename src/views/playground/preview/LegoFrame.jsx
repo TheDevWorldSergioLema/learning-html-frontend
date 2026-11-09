@@ -3,8 +3,8 @@ import { useLatest } from '../../../hooks/useLatest.js'
 import { drawGhosts, FRAME_HEIGHT, FRAME_WIDTH, measure, render, SKELETON } from '../../../utils/frame.js'
 import './LegoFrame.scss'
 
-/** Renders the build in a sandboxed frame and reports its bricks through `onMeasure` on every change. */
-export function LegoFrame({ html, css, onMeasure, target, placed, showGhosts, hidden = false, title }) {
+/** Renders the build in a sandboxed frame and reports its bricks through `onMeasure` on every change of code or step. */
+export function LegoFrame({ stepId, html, css, onMeasure, target, placed, showGhosts, hidden = false, title }) {
   const ref = useRef(null)
   const measureRef = useLatest(onMeasure)
   const [ready, setReady] = useState(false)
@@ -14,7 +14,7 @@ export function LegoFrame({ html, css, onMeasure, target, placed, showGhosts, hi
     const doc = ref.current.contentDocument
     render(doc, html, css)
     measureRef.current(measure(doc))
-  }, [ready, html, css, measureRef])
+  }, [ready, stepId, html, css, measureRef])
 
   useEffect(() => {
     if (!ready || hidden) return

@@ -97,6 +97,7 @@ export function PlaygroundView() {
       >
         <LegoFrame
           title={t('preview.yourBuild')}
+          stepId={level.id}
           html={code.html}
           css={code.css}
           onMeasure={onActual}
@@ -124,7 +125,13 @@ export function PlaygroundView() {
         {renderCodeColumn()}
         {renderPreviewColumn()}
       </main>
-      <LegoFrame title={t('preview.targetBuild')} hidden html={solution.html} css={solution.css} onMeasure={onTarget} />
+      <LegoFrame
+        title={t('preview.targetBuild')}
+        hidden
+        stepId={level.id}
+        html={solution.html} css={solution.css}
+        onMeasure={onTarget}
+      />
     </PublicLayout>
   )
 }

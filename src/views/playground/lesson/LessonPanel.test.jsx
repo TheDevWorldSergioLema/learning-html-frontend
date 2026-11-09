@@ -9,13 +9,19 @@ const props = { step: 1, total: levels.length, level, onHint: () => {}, onSoluti
 
 describe('LessonPanel', () => {
   describe('lesson', () => {
-    it('shows the translated title, goal and example of the level', () => {
+    it('shows the translated title, goal and definition of the level', () => {
       render(<LessonPanel {...props} hintsShown={0} />)
 
       expect(screen.getByRole('heading', { name: 'Your first brick' })).toBeInTheDocument()
       expect(screen.getByText('Step 1 of 20')).toBeInTheDocument()
       expect(screen.getByText(/Make the brick 2 studs wide/)).toBeInTheDocument()
-      expect(screen.getByText(/padding: 10px; \/\* 10 \+ 10/)).toBeInTheDocument()
+      expect(screen.getByText(/The space inside an element/)).toBeInTheDocument()
+    })
+
+    it('hides the example code until it is given as a hint', () => {
+      render(<LessonPanel {...props} hintsShown={0} />)
+
+      expect(screen.queryByText(/padding: 10px; \/\* 10 \+ 10/)).not.toBeInTheDocument()
     })
   })
 
@@ -29,9 +35,18 @@ describe('LessonPanel', () => {
       expect(onHint).toHaveBeenCalledOnce()
     })
 
+    it('gives the example code just before the last hint', () => {
+      render(<LessonPanel {...props} hintsShown={3} />)
+
+      const items = screen.getAllByRole('listitem')
+      expect(items).toHaveLength(3)
+      expect(items[2]).toHaveTextContent(/padding: 10px; \/\* 10 \+ 10/)
+      expect(screen.getByRole('button', { name: /4 of 4/ })).toBeInTheDocument()
+    })
+
     it('replaces the code with the solution only after confirming', async () => {
       const onSolution = vi.fn()
-      const { user } = renderWithUser(<LessonPanel {...props} hintsShown={3} onSolution={onSolution} />)
+      const { user } = renderWithUser(<LessonPanel {...props} hintsShown={4} onSolution={onSolution} />)
 
       await user.click(screen.getByRole('button', { name: 'Show me the solution' }))
       await user.click(screen.getByRole('button', { name: 'Keep trying' }))

@@ -14,8 +14,10 @@ export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution
 
   const texts = `levels.${level.id}`
   const intro = t(`${texts}.intro`, { returnObjects: true })
-  const hints = t(`${texts}.hints`, { returnObjects: true })
-  const allHints = hintsShown >= hints.length
+  const hints = t(`${texts}.hints`, { returnObjects: true }).map((text) => ({ text }))
+  const example = level.example && { code: fillComments(level.example, comments) }
+  const hintList = example ? [...hints.slice(0, -1), example, hints.at(-1)] : hints
+  const allHints = hintsShown >= hintList.length
 
   const replaceCode = () => {
     setConfirming(false)
@@ -24,9 +26,15 @@ export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution
 
   const renderHints = () => (
     <ol className="hint-list">
-      {hints.slice(0, hintsShown).map((h) => (
-        <li key={h}>
-          <RichText text={h} />
+      {hintList.slice(0, hintsShown).map((hint) => (
+        <li key={hint.text ?? hint.code}>
+          {hint.code ? (
+            <pre className="example">
+              <code>{hint.code}</code>
+            </pre>
+          ) : (
+            <RichText text={hint.text} />
+          )}
         </li>
       ))}
     </ol>
@@ -59,7 +67,14 @@ export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution
           <RichText text={p} />
         </p>
       ))}
-      {level.example && <pre className="example"><code>{fillComments(level.example, comments)}</code></pre>}
+      <div className="definition">
+        <p className="definition-term">
+          {t('lesson.definition')} <code>{level.concept}</code>
+        </p>
+        <p>
+          <RichText text={t(`concepts.${level.concept}`)} />
+        </p>
+      </div>
 
       <div className="goal">
         <span className="goal-brick" aria-hidden="true" />
@@ -75,7 +90,7 @@ export function LessonPanel({ step, total, level, hintsShown, onHint, onSolution
           {!allHints && (
             <Button onClick={onHint}>
               {t(hintsShown === 0 ? 'lesson.firstHint' : 'lesson.nextHint')}
-              <span className="hint-count">{t('lesson.hintCount', { current: hintsShown + 1, total: hints.length })}</span>
+              <span className="hint-count">{t('lesson.hintCount', { current: hintsShown + 1, total: hintList.length })}</span>
             </Button>
           )}
           {allHints && !confirming && (

@@ -52,8 +52,26 @@
   max-width: 68ch;
 }
 
-.example {
+.definition {
   margin: $spacing-2 0 $spacing-7;
+  padding: $spacing-5 $spacing-7;
+  background: $color-panel-sunk;
+  border-left: $border-width-accent solid $color-blue;
+  border-radius: $radius-sm;
+  max-width: 68ch;
+
+  p {
+    margin: 0;
+  }
+
+  .definition-term {
+    margin-bottom: $spacing-2;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.example {
+  margin: $spacing-2 0 0;
   padding: $spacing-5 $spacing-7;
   background: $color-panel-sunk;
   border-left: $border-width-accent solid $color-blue;
