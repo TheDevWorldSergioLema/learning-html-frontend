@@ -46,7 +46,8 @@
     "confirmLabel": "Replace your code with the solution?",
     "confirmText": "This replaces your code with the solution.",
     "replaceCode": "Replace my code",
-    "keepTrying": "Keep trying"
+    "keepTrying": "Keep trying",
+    "definition": "Definition"
   },
   "editor": {
     "label": "Code editor",
@@ -115,6 +116,16 @@
       "missingUnit": "Line {{line}}: add a unit to the number, like 20px.",
       "unclosedBrace": "A { is never closed: add a } at the end of the rule."
     }
+  },
+  "concepts": {
+    "padding": "The space inside an element, between its edge and its content. One value applies to all four sides; with two values, the first one is for top and bottom, the second one for left and right.",
+    "background-color": "The color painted behind the content of an element, padding included. It takes a color name.",
+    "margin": "The space outside an element: it pushes the element away from its neighbours and from the edge of its container. `margin-top`, `margin-right`, `margin-bottom` and `margin-left` set one side each.",
+    "justify-content": "Set on a flex container, it places the items along the main axis (a row by default). Values: `flex-start`, `center`, `flex-end`, `space-between`, `space-around`.",
+    "align-items": "Set on a flex container, it places the items across the main axis (vertically in a row). Values: `flex-start`, `center`, `flex-end`, `stretch`.",
+    "flex-direction": "Sets the main axis of a flex container: `row` (the default, left to right) or `column` (top to bottom). `justify-content` follows the main axis, `align-items` the other one.",
+    "gap": "Set on a flex container, it adds the same space between every two neighbouring items, never before the first one or after the last one.",
+    "HTML": "An element is written with an opening and a closing tag: `<div class=\"…\"></div>`. Elements written between the tags of another element are its children: the CSS of the parent lays them out."
   },
   "levels": {
     "first-brick": {
@@ -270,7 +281,7 @@
     "push-right": {
       "title": "Push to the end",
       "intro": [
-        "`justify-content: flex-end` pushes all the bricks to the end of the row, keeping their order."
+        "Now all the bricks must go to the end of the row, keeping their order. One of the `justify-content` values in the definition does exactly that."
       ],
       "goal": "Move the three bricks to the right edge of the baseplate.",
       "hints": [
@@ -282,8 +293,8 @@
     "spread-out": {
       "title": "Spread out",
       "intro": [
-        "`justify-content: space-between` puts the first brick at the start, the last one at the end, and shares the free space equally between them.",
-        "Other options: `space-around` and `space-evenly` also put space at the edges."
+        "This time the first brick goes at the start, the last one at the end, and the free space is shared equally between the bricks.",
+        "Pick the right `justify-content` value: `space-around` and `space-evenly` look close, but they also put space at the edges."
       ],
       "goal": "Spread the four bricks across the full width of the baseplate.",
       "hints": [

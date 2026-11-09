@@ -2,7 +2,8 @@
 
 A browser-only playground where students learn HTML and CSS by placing toy bricks on a baseplate.
 The code editor is on the left, a browser-like preview on the right. Each of the 20 steps explains
-one idea, shows dashed outlines where the bricks must go, checks the build live and offers hints.
+one idea with the definition of its CSS property, shows dashed outlines where the bricks must go, checks the build
+live and offers hints, the last ones with example code.
 
 | Steps | Concept | What it does to a brick |
 | --- | --- | --- |
@@ -104,7 +105,8 @@ the step as completed in the store when they match.
 1 stud = 20px; the baseplate is 400 × 280px.
 
 - The student's code is written into a sandboxed iframe (no scripts) without reloading it
-  (`src/utils/frame.js`).
+  (`src/utils/frame.js`). Both frames measure again on every change of code or step, since two steps
+  can share the same code (a step's solution is often the next step's starter).
 - The step's solution is rendered in a hidden iframe the same way. The size, position and color of
   each `.brick` in it become the target: the dashed outlines and the reference for the check.
 - `src/utils/compare.js` compares the bricks one by one, in HTML order, with a 1px tolerance, and
@@ -129,15 +131,17 @@ The preview iframe is a separate document: its look (baseplate, bricks, studs) i
 ## Adding or changing a step
 
 - Code lives in `src/views/playground/levels.js`: the starter `html`/`css`, a `solutionCss` and/or
-  `solutionHtml`, an optional `example`, the `concept` badge, `htmlEditable: true` when the student
+  `solutionHtml`, an optional `example` (code given as the hint before the last one), the `concept` badge, `htmlEditable: true` when the student
   must write HTML and `startTab` to open the HTML tab first.
 - Texts live in every `src/i18n/locales/<language>/translation.json` under `levels.<id>`: `title`, `intro`
-  (paragraphs), `goal`, progressive `hints` and the `recap` shown on success. They accept
+  (paragraphs), `goal`, progressive `hints` (the last one gives the answer) and the `recap` shown on success.
+  The definition shown in the lesson is the step's concept, under `concepts.<concept>`: it must not give the
+  solution away. They accept
   `` `inline code` ``, which must stay identical in every language.
 - Comments in the code are written as `/* {{key}} */` placeholders and translated under `codeComments.<key>`
   (`fillComments` in `src/utils/codeComments.js`), so the starter code, examples and solutions follow the
   chosen language.
 
-`levels.test.js` checks that every step has a solution that changes something, all its texts in every
-language and that the translated comments don't break the CSS. `locales.test.js` checks that every
+`levels.test.js` checks that every step has a solution that changes something, all its texts and the
+definition of its concept in every language and that the translated comments don't break the CSS. `locales.test.js` checks that every
 language has the same keys, placeholders, inline code and tags as English.

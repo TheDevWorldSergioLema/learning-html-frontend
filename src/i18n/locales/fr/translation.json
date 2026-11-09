@@ -46,7 +46,8 @@
     "confirmLabel": "Remplacer ton code par la solution ?",
     "confirmText": "Ton code sera remplacé par la solution.",
     "replaceCode": "Remplacer mon code",
-    "keepTrying": "Je continue"
+    "keepTrying": "Je continue",
+    "definition": "Définition"
   },
   "editor": {
     "label": "Éditeur de code",
@@ -115,6 +116,16 @@
       "missingUnit": "Ligne {{line}} : ajoute une unité au nombre, comme 20px.",
       "unclosedBrace": "Une { n'est jamais fermée : ajoute une } à la fin de la règle."
     }
+  },
+  "concepts": {
+    "padding": "L'espace à l'intérieur d'un élément, entre son bord et son contenu. Une valeur s'applique aux quatre côtés ; avec deux valeurs, la première est pour le haut et le bas, la seconde pour la gauche et la droite.",
+    "background-color": "La couleur peinte derrière le contenu d'un élément, padding compris. Elle prend un nom de couleur.",
+    "margin": "L'espace à l'extérieur d'un élément : il éloigne l'élément de ses voisins et du bord de son conteneur. `margin-top`, `margin-right`, `margin-bottom` et `margin-left` règlent chacun un côté.",
+    "justify-content": "Sur un conteneur flex, il place les éléments le long de l'axe principal (une ligne par défaut). Valeurs : `flex-start`, `center`, `flex-end`, `space-between`, `space-around`.",
+    "align-items": "Sur un conteneur flex, il place les éléments en travers de l'axe principal (verticalement dans une ligne). Valeurs : `flex-start`, `center`, `flex-end`, `stretch`.",
+    "flex-direction": "Définit l'axe principal d'un conteneur flex : `row` (par défaut, de gauche à droite) ou `column` (de haut en bas). `justify-content` suit l'axe principal, `align-items` l'autre.",
+    "gap": "Sur un conteneur flex, il ajoute le même espace entre deux éléments voisins, jamais avant le premier ni après le dernier.",
+    "HTML": "Un élément s'écrit avec une balise ouvrante et une balise fermante : `<div class=\"…\"></div>`. Les éléments écrits entre les balises d'un autre élément sont ses enfants : le CSS du parent les dispose."
   },
   "levels": {
     "first-brick": {
@@ -270,7 +281,7 @@
     "push-right": {
       "title": "Pousse jusqu'au bout",
       "intro": [
-        "`justify-content: flex-end` pousse toutes les briques au bout de la ligne, en gardant leur ordre."
+        "Cette fois, toutes les briques doivent aller au bout de la ligne, dans le même ordre. L'une des valeurs de `justify-content` de la définition fait exactement cela."
       ],
       "goal": "Déplace les trois briques contre le bord droit de la plaque.",
       "hints": [
@@ -282,8 +293,8 @@
     "spread-out": {
       "title": "Répartis-les",
       "intro": [
-        "`justify-content: space-between` met la première brique au début, la dernière à la fin, et partage l'espace libre à parts égales entre elles.",
-        "Autres options : `space-around` et `space-evenly` mettent aussi de l'espace sur les bords."
+        "Cette fois, la première brique va au début, la dernière à la fin, et l'espace libre est partagé à parts égales entre les briques.",
+        "Choisis la bonne valeur de `justify-content` : `space-around` et `space-evenly` y ressemblent, mais elles mettent aussi de l'espace sur les bords."
       ],
       "goal": "Répartis les quatre briques sur toute la largeur de la plaque.",
       "hints": [

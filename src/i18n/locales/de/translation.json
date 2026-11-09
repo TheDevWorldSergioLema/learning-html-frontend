@@ -46,7 +46,8 @@
     "confirmLabel": "Deinen Code durch die Lösung ersetzen?",
     "confirmText": "Dein Code wird durch die Lösung ersetzt.",
     "replaceCode": "Meinen Code ersetzen",
-    "keepTrying": "Weiter probieren"
+    "keepTrying": "Weiter probieren",
+    "definition": "Definition"
   },
   "editor": {
     "label": "Code-Editor",
@@ -115,6 +116,16 @@
       "missingUnit": "Zeile {{line}}: Gib der Zahl eine Einheit, zum Beispiel 20px.",
       "unclosedBrace": "Eine { wird nie geschlossen: Füge am Ende der Regel eine } hinzu."
     }
+  },
+  "concepts": {
+    "padding": "Der Abstand innerhalb eines Elements, zwischen seinem Rand und seinem Inhalt. Ein Wert gilt für alle vier Seiten; bei zwei Werten gilt der erste für oben und unten, der zweite für links und rechts.",
+    "background-color": "Die Farbe hinter dem Inhalt eines Elements, padding eingeschlossen. Sie nimmt einen Farbnamen.",
+    "margin": "Der Abstand außerhalb eines Elements: Er schiebt das Element von seinen Nachbarn und vom Rand seines Containers weg. `margin-top`, `margin-right`, `margin-bottom` und `margin-left` setzen je eine Seite.",
+    "justify-content": "Auf einem Flex-Container platziert es die Elemente entlang der Hauptachse (standardmäßig eine Zeile). Werte: `flex-start`, `center`, `flex-end`, `space-between`, `space-around`.",
+    "align-items": "Auf einem Flex-Container platziert es die Elemente quer zur Hauptachse (in einer Zeile senkrecht). Werte: `flex-start`, `center`, `flex-end`, `stretch`.",
+    "flex-direction": "Legt die Hauptachse eines Flex-Containers fest: `row` (Standard, von links nach rechts) oder `column` (von oben nach unten). `justify-content` folgt der Hauptachse, `align-items` der anderen.",
+    "gap": "Auf einem Flex-Container fügt es zwischen zwei benachbarten Elementen immer denselben Abstand ein, nie vor dem ersten oder nach dem letzten.",
+    "HTML": "Ein Element wird mit einem öffnenden und einem schließenden Tag geschrieben: `<div class=\"…\"></div>`. Elemente zwischen den Tags eines anderen Elements sind seine Kinder: Das CSS des Elternelements ordnet sie an."
   },
   "levels": {
     "first-brick": {
@@ -270,7 +281,7 @@
     "push-right": {
       "title": "Ans Ende schieben",
       "intro": [
-        "`justify-content: flex-end` schiebt alle Steine ans Ende der Reihe und behält ihre Reihenfolge."
+        "Jetzt müssen alle Steine ans Ende der Zeile, in derselben Reihenfolge. Einer der `justify-content`-Werte aus der Definition macht genau das."
       ],
       "goal": "Schiebe die drei Steine an den rechten Rand der Platte.",
       "hints": [
@@ -282,8 +293,8 @@
     "spread-out": {
       "title": "Verteilen",
       "intro": [
-        "`justify-content: space-between` setzt den ersten Stein an den Anfang, den letzten ans Ende und verteilt den freien Platz gleichmäßig dazwischen.",
-        "Weitere Möglichkeiten: `space-around` und `space-evenly` lassen auch an den Rändern Platz."
+        "Diesmal kommt der erste Stein an den Anfang, der letzte ans Ende, und der freie Platz wird gleichmäßig zwischen den Steinen verteilt.",
+        "Wähle den richtigen `justify-content`-Wert: `space-around` und `space-evenly` sehen ähnlich aus, setzen aber auch Abstand an die Ränder."
       ],
       "goal": "Verteile die vier Steine über die ganze Breite der Platte.",
       "hints": [

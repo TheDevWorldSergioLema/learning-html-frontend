@@ -50,8 +50,8 @@ Run `npm test`, `npm run lint` and `npm run build` before reporting a change as 
 
 - The project is plain JavaScript: entities are JSDoc typedefs in `src/types/entities.js`, enums are frozen objects in `src/types/*.js`.
 - Utils return structured values (`BuildIssue`, `LintWarning`, `Distance`), never sentences: components translate them.
-- A step's code lives in `src/views/playground/levels.js`, its texts in the translations under `levels.<id>` (`title`, `intro`, `goal`, `hints`, `recap`). Text fields accept `` `inline code` `` rendered by `RichText`, kept identical in every language.
+- A step's code lives in `src/views/playground/levels.js`, its texts in the translations under `levels.<id>` (`title`, `intro`, `goal`, `hints`, `recap`), the definition of its concept under `concepts.<concept>`. Neither the definition nor the intro may give the solution away: code close to the solution belongs in the hints (`example` is shown as the hint before the last one). Text fields accept `` `inline code` `` rendered by `RichText`, kept identical in every language.
 - Comments inside a step's code are `/* {{key}} */` placeholders, translated under `codeComments.<key>` and filled with `fillComments`.
 - Each component has its own `.scss` file next to it, starting with `@use 'config' as *;` (and `typography`, `mixins` when needed). Only `global.scss` defines global rules and the CSS custom properties used by the CodeMirror theme.
 - The preview iframe (`src/utils/frame.js`) is a separate document: its baseplate and brick styles cannot use the SCSS tokens. `$color-preview-background` must stay equal to its body background.
-- jsdom does not load an iframe's `srcdoc`, so `LegoFrame` and `PlaygroundView` cannot be rendered in tests; test the utils and the other components instead.
+- jsdom does not load an iframe's `srcdoc`: `LegoFrame` is tested with `utils/frame.js` mocked and a fired `load` event; `PlaygroundView` cannot be rendered in tests.

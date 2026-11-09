@@ -31,6 +31,12 @@ describe('levels', () => {
       expect(Object.keys(translation.levels)).toEqual(levels.map((l) => l.id))
     })
 
+    it('has a definition for the concept of every step', () => {
+      for (const l of levels) {
+        expect(translation.concepts[l.concept], l.id).toBeTruthy()
+      }
+    })
+
     it('has the same number of intro paragraphs and hints as English', () => {
       for (const l of levels) {
         expect(translation.levels[l.id].intro.length, l.id).toBe(locales.en.levels[l.id].intro.length)
