@@ -12,6 +12,11 @@
       "de": "Deutsch"
     }
   },
+  "footer": {
+    "github": "Codice sorgente su GitHub",
+    "linkedin": "LinkedIn",
+    "blog": "Blog"
+  },
   "codeComments": {
     "bothSides": "10 + 10 = 20px di larghezza e di altezza",
     "longSize": "20px di altezza, 60px di larghezza",

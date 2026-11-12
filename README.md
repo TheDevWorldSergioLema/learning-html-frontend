@@ -68,12 +68,12 @@ src/
 │   └── toggle/         Toggle switch
 ├── hooks/              shared hooks: useFitScale (scale a box to fit), useLatest (ref to the latest value), useCodeComments (translated code comments)
 ├── i18n/               i18next setup and locales/<en|fr|es|it|de>/translation.json
-├── layout/             PublicLayout: top bar with the brand, the step strip and the language selector
+├── layout/             PublicLayout: top bar with the brand, the step strip and the language selector; Footer with the project links
 ├── services/           progressService and languageService: read and write the progress and the language in localStorage
 ├── stores/             progressStore (zustand): current step, completed steps, code and hints per step
 ├── styles/             _config.scss (tokens), _typography.scss, _mixins.scss, global.scss
 ├── test/               shared test setup, factories and render helpers
-├── types/              enums (EditorTab, BuildIssue, LintWarning, DistanceUnit, ButtonVariant, Language) and JSDoc entities
+├── types/              enums (EditorTab, BuildIssue, LintWarning, DistanceUnit, ButtonVariant, Language, FooterLink) and JSDoc entities
 ├── utils/              frame (preview iframe), compare (build check), cssLint (CSS warnings), codeComments (translated code comments)
 └── views/
     └── playground/     the only page, its components grouped by feature
@@ -145,3 +145,12 @@ The preview iframe is a separate document: its look (baseplate, bricks, studs) i
 `levels.test.js` checks that every step has a solution that changes something, all its texts and the
 definition of its concept in every language and that the translated comments don't break the CSS. `locales.test.js` checks that every
 language has the same keys, placeholders, inline code and tags as English.
+
+## Contributing
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). To report a vulnerability, see
+[SECURITY.md](SECURITY.md).
+
+## License
+
+[MIT](LICENSE) © Sergio Lema
