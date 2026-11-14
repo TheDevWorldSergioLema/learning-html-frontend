@@ -17,6 +17,17 @@
     "linkedin": "LinkedIn",
     "blog": "Blog"
   },
+  "screenNotice": {
+    "small": {
+      "title": "Ehi, potrebbe servirti uno schermo più grande per vedere tutto il contenuto",
+      "text": "Questo corso funziona meglio in una finestra larga almeno 1280 pixel. Allarga la finestra o continua comunque.",
+      "continue": "Continua comunque"
+    },
+    "mobile": {
+      "title": "Pensi davvero di poter sviluppare qualcosa su un telefono?",
+      "text": "Passa a un computer."
+    }
+  },
   "codeComments": {
     "bothSides": "10 + 10 = 20px di larghezza e di altezza",
     "longSize": "20px di altezza, 60px di larghezza",
